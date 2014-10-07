@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.vaiotech.myschool.MenuHomeActivity" >
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="always" />
+
+    <item android:id="@+id/admission"
+        android:title="Admission" />
+    <item android:id="@+id/calendar"
+        android:title="Calendar" />
+    <item android:id="@+id/schoolTiming"
+        android:title="School Timing" />
+    <item android:id="@+id/busTiming"
+        android:title="Bus Timing" />
+    <item android:id="@+id/newsAndEvents"
+        android:title="News and Events" />
+    <item android:id="@+id/career"
+        android:title="Career" />
+    <item android:id="@+id/fees"
+        android:title="Fees" />
+    <item android:id="@+id/faculty"
+        android:title="Faculty" />
+    <item android:id="@+id/contactUs"
+        android:title="Contact us" />
+    <item android:id="@+id/aboutUs"
+        android:title="About us" />
+</menu>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MySchool</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="stateSpinner">
+        <item>Maharashtra</item>
+        <item>Gujarat</item>
+    </string-array>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_menu_home">MenuHomeActivity</string>
+    <string name="title_activity_login_details">LoginDetailsActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_admision">AdmisionActivity</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+    <string name="title_activity_school_timing">SchoolTimingActivity</string>
+    <string name="title_activity_bus_timing">BusTimingActivity</string>
+    <string name="title_activity_news_and_events">NewsAndEventsActivity</string>
+    <string name="title_activity_career">CareerActivity</string>
+    <string name="title_activity_fees">FeesActivity</string>
+    <string name="title_activity_faculty">FacultyActivity</string>
+    <string name="title_activity_contact_us">ContactUsActivity</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+
+</resources>
