@@ -12,6 +12,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.octo.android.robospice.SpiceManager;
+import com.octo.android.robospice.persistence.exception.SpiceException;
+import com.octo.android.robospice.request.listener.RequestListener;
+import com.vaiotech.services.CityService;
+import com.vaiotech.services.RestService;
+import com.vaiotech.services.RestServiceImpl;
+import com.vaiotech.services.SchoolService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +30,16 @@ public class HomeActivity extends Activity {
     Spinner spinner;
     Spinner schoolSpinner;
     Context context;
+    private SpiceManager spiceManager = new SpiceManager(RestService.class);
+    private RestServiceImpl restServiceImpl;
+    private CityService cityService;
+    private SchoolService schoolService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        restServiceImpl = new RestServiceImpl();
         context = this;
         setContentView(R.layout.activity_home);
         System.out.println(getAssets().getLocales());
@@ -89,6 +104,31 @@ public class HomeActivity extends Activity {
         }
 
         return retVal;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        spiceManager.start(this);
+        spiceManager.execute(restServiceImpl , new RestServiceListener());
+    }
+
+    public final class RestServiceListener implements RequestListener<String> {
+
+        @Override
+        public void onRequestFailure(SpiceException spiceException) {
+            Toast.makeText(HomeActivity.this, "failure", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onRequestSuccess(final String result) {
+            Toast.makeText(HomeActivity.this, "success", Toast.LENGTH_SHORT).show();
+            updateContributors(result);
+        }
+    }
+
+    public void updateContributors(final String result) {
+        System.out.println("result... " + result);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {

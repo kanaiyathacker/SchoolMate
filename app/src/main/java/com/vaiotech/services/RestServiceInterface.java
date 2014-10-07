@@ -13,6 +13,6 @@ public interface RestServiceInterface {
     @GET("/")
     Object getCity();
 
-    @GET("/")
-    Object getSchool();
+    @GET("/myschoolID/{cityID}/modelID/{modelID}")
+    Object getSchools(String cityID , String modelID);
 }

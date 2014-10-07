@@ -17,6 +17,10 @@ public class RestServiceImpl extends RetrofitSpiceRequest<String , RestServiceIn
     private String schoolID;
     private String modelID;
 
+    public RestServiceImpl() {
+        super(String.class, RestServiceInterface.class);
+    }
+
     public RestServiceImpl(String schoolID , String modelID) {
         super(String.class, RestServiceInterface.class);
         this.schoolID = schoolID;
@@ -34,6 +38,14 @@ public class RestServiceImpl extends RetrofitSpiceRequest<String , RestServiceIn
         System.out.println("getService().getDescription(" + map.get("message"));
         System.out.println("getService().getDescription(" + map.get("status.message"));
          return "Kanaiya,....";
+    }
+
+    public void getCity() {
+        com.google.gson.internal.LinkedTreeMap map = (LinkedTreeMap) getService().getCity();
+    }
+
+    public void getSchools(final String cityID , final String schoolID) {
+        com.google.gson.internal.LinkedTreeMap map = (LinkedTreeMap) getService().getSchools(cityID , schoolID);
     }
 
 
