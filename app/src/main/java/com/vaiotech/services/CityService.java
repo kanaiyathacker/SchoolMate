@@ -18,8 +18,6 @@ public class CityService extends RetrofitSpiceRequest<List , RestServiceInterfac
 
     @Override
     public List<String> loadDataFromNetwork() throws java.lang.Exception{
-        System.out.println("loadDataFromNetwork.......................");
-        System.out.println("loadDataFromNetwork......................." + getService().getCity());
         List<String> retVal = new ArrayList();
         List<LinkedTreeMap> list = (List<LinkedTreeMap>) getService().getCity();
         if(list != null && !list.isEmpty()) {

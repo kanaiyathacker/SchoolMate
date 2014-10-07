@@ -31,7 +31,6 @@ public class SchoolService extends RetrofitSpiceRequest<List , RestServiceInterf
     @Override
     public List loadDataFromNetwork() throws java.lang.Exception{
         System.out.println("loadDataFromNetwork.......................");
-        System.out.println("loadDataFromNetwork......................." + getService().getCity());
         com.google.gson.internal.LinkedTreeMap map = (LinkedTreeMap) getService().getSchools(cityID);
         return null;
     }

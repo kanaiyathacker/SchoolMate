@@ -3,7 +3,6 @@ package com.example.vaiotech.myschool;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.octo.android.robospice.SpiceManager;
@@ -19,7 +17,6 @@ import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 import com.vaiotech.services.CityService;
 import com.vaiotech.services.RestService;
-import com.vaiotech.services.RestServiceImpl;
 import com.vaiotech.services.SchoolService;
 
 import java.util.ArrayList;
@@ -31,6 +28,7 @@ public class HomeActivity extends Activity {
     Spinner schoolSpinner;
     Context context;
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
+    private SpiceManager spiceManager1 = new SpiceManager(RestService.class);
 
     //    private RestServiceImpl restServiceImpl;
     private CityService cityService;
@@ -54,9 +52,8 @@ public class HomeActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String str = (String)adapterView.getItemAtPosition(i);
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, getSchools(str));
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                schoolSpinner.setAdapter(adapter);
+                getSchools(str);
+
             }
 
             @Override
@@ -86,27 +83,18 @@ public class HomeActivity extends Activity {
         startActivity(intent);
     }
 
-    private List getSchools(String city) {
-        schoolService.setCityID("001");
-        spiceManager.execute(cityService , new SchoolServiceListener());
-        System.out.println("getSchools.....");
-        List retVal = new ArrayList();
-        if(city.equals("Maharashtra")) {
-            retVal.add("A");
-            retVal.add("B");
-        } else {
-            retVal.add("C");
-            retVal.add("D");
-        }
-
-        return retVal;
+    private void getSchools(String city) {
+        schoolService.setCityID(city.split("-")[0]);
+        spiceManager1.start(this);
+        spiceManager1.execute(schoolService , new SchoolServiceListener());
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         spiceManager.start(this);
-        spiceManager.execute(cityService , new RestServiceListener());
+        spiceManager.execute(cityService, new RestServiceListener());
+//        spiceManager1.start(this);
     }
 
     public final class SchoolServiceListener implements RequestListener<List> {
@@ -124,9 +112,9 @@ public class HomeActivity extends Activity {
     }
 
     public void updateSchool(final List result) {
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item, result);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner.setAdapter(adapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, result);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        schoolSpinner.setAdapter(adapter);
     }
 
 
@@ -148,6 +136,7 @@ public class HomeActivity extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item, result);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        spiceManager.shouldStop();
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
