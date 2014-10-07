@@ -10,9 +10,9 @@ public interface RestServiceInterface {
     @GET("/")
     Object getDescription();
 
-    @GET("/")
+    @GET("/city/getAllCity")
     Object getCity();
 
-    @GET("/myschoolID/{cityID}/modelID/{modelID}")
-    Object getSchools(String cityID , String modelID);
+    @GET("/citySchool/cityId/{cityID}")
+    Object getSchools(String cityID);
 }

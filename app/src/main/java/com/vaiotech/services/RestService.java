@@ -6,7 +6,7 @@ import com.octo.android.robospice.retrofit.RetrofitGsonSpiceService;
  * Created by kanaiyalalt on 02/10/2014.
  */
 public class RestService extends RetrofitGsonSpiceService {
-    private final static String BASE_URL = "http://devicetokenapplicai-env.elasticbeanstalk.com/myschool/";
+    private final static String BASE_URL = "http://devicetokenapplicai-env.elasticbeanstalk.com/";
 
     @Override
     public void onCreate() {
