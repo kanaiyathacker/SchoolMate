@@ -36,31 +36,5 @@ public class RestServiceImpl extends RetrofitSpiceRequest<String , RestServiceIn
          return "Kanaiya,....";
     }
 
-    public class Exception {
-        private Status status;
-        public Status getStatus(){
-            return this.status;
-        }
-        public void setStatus(Status status){
-            this.status = status;
-        }
-    }
 
-    public class Status {
-        private String message;
-        private Number value;
-
-        public String getMessage(){
-            return this.message;
-        }
-        public void setMessage(String message){
-            this.message = message;
-        }
-        public Number getValue(){
-            return this.value;
-        }
-        public void setValue(Number value){
-            this.value = value;
-        }
-    }
 }

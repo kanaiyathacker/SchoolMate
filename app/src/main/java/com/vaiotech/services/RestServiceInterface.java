@@ -9,4 +9,10 @@ import retrofit.http.Path;
 public interface RestServiceInterface {
     @GET("/")
     Object getDescription();
+
+    @GET("/")
+    Object getCity();
+
+    @GET("/")
+    Object getSchool();
 }
