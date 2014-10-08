@@ -1,29 +1,45 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.vaiotech.myschool.MenuHomeActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="always" />
-
     <item android:id="@+id/admission"
-        android:title="Admission" />
+        android:title="Admission"
+        android:icon="@drawable/admission_icon"
+        android:showAsAction="always"
+        />
     <item android:id="@+id/calendar"
+
+        android:icon="@drawable/admission_icon"
         android:title="Calendar" />
     <item android:id="@+id/schoolTiming"
+        android:icon="@drawable/admission_icon"
+        
         android:title="School Timing" />
     <item android:id="@+id/busTiming"
+        android:icon="@drawable/admission_icon"
+        
         android:title="Bus Timing" />
     <item android:id="@+id/newsAndEvents"
+        
+        android:icon="@drawable/admission_icon"
         android:title="News and Events" />
     <item android:id="@+id/career"
+        
+        android:icon="@drawable/admission_icon"
         android:title="Career" />
     <item android:id="@+id/fees"
+        
+        android:icon="@drawable/admission_icon"
         android:title="Fees" />
     <item android:id="@+id/faculty"
+        android:icon="@drawable/admission_icon"
+        
         android:title="Faculty" />
     <item android:id="@+id/contactUs"
+        android:icon="@drawable/admission_icon"
+        
         android:title="Contact us" />
     <item android:id="@+id/aboutUs"
+        android:icon="@drawable/admission_icon"
+        
         android:title="About us" />
 </menu>
