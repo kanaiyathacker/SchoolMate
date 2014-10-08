@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
@@ -15,11 +16,13 @@ public class AdmisionActivity extends Activity {
 
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
     private AdmissionService admissionService;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admision);
+        textView = (TextView)findViewById(R.id.textViewAdmission);
 //        System.out.println(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
 //        System.out.println(this.getIntent().getStringExtra("SELECTED_CITY"));
         admissionService = new AdmissionService("101" , "001");
@@ -67,7 +70,7 @@ public class AdmisionActivity extends Activity {
 
         @Override
         public void onRequestSuccess(String s) {
-
+            textView.setText(s);
         }
     }
 }

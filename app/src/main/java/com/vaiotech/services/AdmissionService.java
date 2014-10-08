@@ -22,13 +22,12 @@ public class AdmissionService extends RetrofitSpiceRequest<String , RestServiceI
 
     @Override
     public String loadDataFromNetwork() throws java.lang.Exception{
-        List<String> retVal = new ArrayList();
-        List<LinkedTreeMap> list = (List<LinkedTreeMap>) getService().getModelDesc(schoolID , modelID);
-        if(list != null && !list.isEmpty()) {
-            for(LinkedTreeMap currVal : list) {
-                retVal.add(currVal.get("cityID") + " - " + currVal.get("cityName"));
-            }
+        String retVal = null;
+        LinkedTreeMap map = (LinkedTreeMap) getService().getModelDesc(schoolID , modelID);
+        if(map != null && !map.isEmpty()) {
+                System.out.println("map..." + map);
+                retVal = map.get("description").toString();
         }
-        return "hello";
+        return retVal;
     }
 }
