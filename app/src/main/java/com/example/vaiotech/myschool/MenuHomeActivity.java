@@ -10,6 +10,9 @@ import android.view.MenuItem;
 
 public class MenuHomeActivity extends Activity {
 
+    private String selectedSchool;
+    private String selectedCity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,8 @@ public class MenuHomeActivity extends Activity {
         switch(item.getItemId()) {
             case R.id.admission:
                 intent = new Intent(this ,AdmisionActivity.class);
+                intent.putExtra("SELECTED_SCHOOL" , selectedSchool);
+                intent.putExtra("SELECTED_CITY" , selectedCity);
                 startActivity(intent);
                 break;
             case R.id.calendar:

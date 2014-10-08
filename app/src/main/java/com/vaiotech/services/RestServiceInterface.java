@@ -15,4 +15,7 @@ public interface RestServiceInterface {
 
     @GET("/citySchool/cityId/{cityID}")
     Object getSchools(@Path("cityID") String cityID);
+
+    @GET("/myschool/myschoolID/{schoolID}/modelID/{modelID}")
+    Object getModelDesc(@Path("schoolID") String schoolID , @Path("modelID") String modelID );
 }

@@ -5,13 +5,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.octo.android.robospice.SpiceManager;
+import com.octo.android.robospice.persistence.exception.SpiceException;
+import com.vaiotech.services.AdmissionService;
+import com.vaiotech.services.RestService;
+
 
 public class AdmisionActivity extends Activity {
+
+    private SpiceManager spiceManager = new SpiceManager(RestService.class);
+    private AdmissionService admissionService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admision);
+//        System.out.println(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
+//        System.out.println(this.getIntent().getStringExtra("SELECTED_CITY"));
+        admissionService = new AdmissionService("101" , "001");
     }
 
 
@@ -32,5 +43,31 @@ public class AdmisionActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        spiceManager.shouldStop();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        spiceManager.start(this);
+        spiceManager.execute(admissionService, new RestServiceListener());
+    }
+
+    private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<String> {
+
+        @Override
+        public void onRequestFailure(SpiceException spiceException) {
+
+        }
+
+        @Override
+        public void onRequestSuccess(String s) {
+
+        }
     }
 }

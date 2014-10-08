@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
 public class LoginActivity extends Activity {
+
+    private String selectedSchool;
+    private String selectedCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +22,9 @@ public class LoginActivity extends Activity {
         System.out.println(this.getIntent().getStringExtra("SELECTED_CITY"));
         TextView schoolName = (TextView)findViewById(R.id.textViewSchoolName);
         schoolName.setText(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
+        this.selectedSchool = this.getIntent().getStringExtra("SELECTED_SCHOOL");
+        this.selectedCity = this.getIntent().getStringExtra("SELECTED_CITY");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,6 +36,8 @@ public class LoginActivity extends Activity {
     public void anonymous(View view) {
         Intent intent = new Intent(this ,MenuHomeActivity.class);
         intent.putExtra("LOIN_USER","ANONYMOUS");
+        intent.putExtra("SELECTED_SCHOOL" , selectedSchool);
+        intent.putExtra("SELECTED_CITY" , selectedCity);
         startActivity(intent);
     }
 
