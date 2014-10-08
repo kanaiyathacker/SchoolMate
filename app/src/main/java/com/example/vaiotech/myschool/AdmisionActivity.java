@@ -9,13 +9,14 @@ import android.widget.TextView;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.vaiotech.services.AdmissionService;
+import com.vaiotech.services.ModelService;
 import com.vaiotech.services.RestService;
 
 
 public class AdmisionActivity extends Activity {
 
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
-    private AdmissionService admissionService;
+    private ModelService modelService;
     private TextView textView;
 
     @Override
@@ -25,7 +26,7 @@ public class AdmisionActivity extends Activity {
         textView = (TextView)findViewById(R.id.textViewAdmission);
 //        System.out.println(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
 //        System.out.println(this.getIntent().getStringExtra("SELECTED_CITY"));
-        admissionService = new AdmissionService("101" , "001");
+        modelService = new ModelService("101" , "001");
     }
 
 
@@ -58,7 +59,7 @@ public class AdmisionActivity extends Activity {
     protected void onStart() {
         super.onStart();
         spiceManager.start(this);
-        spiceManager.execute(admissionService, new RestServiceListener());
+        spiceManager.execute(modelService, new RestServiceListener());
     }
 
     private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<String> {

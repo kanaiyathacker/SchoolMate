@@ -16,9 +16,10 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:id="@+id/imageView"
         android:layout_gravity="left"
-        android:layout_weight="1"
+        android:baselineAlignBottom="false"
         android:src="@drawable/admission" />
 
             <ScrollView
@@ -33,7 +34,7 @@
                     android:id="@+id/textViewAdmission"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1.0"/>
+                    android:layout_weight="1"/>
 
             </ScrollView>
     </LinearLayout>

@@ -21,7 +21,7 @@ public class AboutUsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
-        restServiceImpl = new RestServiceImpl("101","001");
+        restServiceImpl = new RestServiceImpl("101","002");
 
     }
 
