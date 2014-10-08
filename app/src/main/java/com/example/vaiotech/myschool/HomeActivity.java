@@ -19,41 +19,36 @@ import com.vaiotech.services.CityService;
 import com.vaiotech.services.RestService;
 import com.vaiotech.services.SchoolService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class HomeActivity extends Activity {
-    Spinner spinner;
+    Spinner citySpinner;
     Spinner schoolSpinner;
     Context context;
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
-    private SpiceManager spiceManager1 = new SpiceManager(RestService.class);
-
-    //    private RestServiceImpl restServiceImpl;
     private CityService cityService;
     private SchoolService schoolService;
-
+    private String selectedSchool;
+    private String selectedCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        restServiceImpl = new RestServiceImpl();
         cityService = new CityService();
         schoolService = new SchoolService();
         context = this;
         setContentView(R.layout.activity_home);
         System.out.println(getAssets().getLocales());
-        spinner = (Spinner)findViewById(R.id.stateSpinner);
-        spinner = (Spinner) findViewById(R.id.stateSpinner);
+        citySpinner = (Spinner)findViewById(R.id.stateSpinner);
         schoolSpinner = (Spinner) findViewById(R.id.schoolSpinner);
-        spinner.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
+        citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String str = (String)adapterView.getItemAtPosition(i);
-                getSchools(str);
-
+                String city = (String) adapterView.getItemAtPosition(i);
+                selectedCity = city;
+                getSchools(city);
             }
 
             @Override
@@ -66,8 +61,9 @@ public class HomeActivity extends Activity {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String str = (String) adapterView.getItemAtPosition(i);
-                System.out.println(str);
+                String school = (String) adapterView.getItemAtPosition(i);
+                selectedSchool = school;
+                System.out.println("school.... "+school);
 
             }
 
@@ -78,15 +74,24 @@ public class HomeActivity extends Activity {
         });
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        spiceManager.shouldStop();
+    }
+
     public void next(View view) {
         Intent intent = new Intent(this ,LoginActivity.class);
+        System.out.println(schoolSpinner.getSelectedItem().toString());
+        System.out.println(citySpinner.getSelectedItem().toString());
+        intent.putExtra("SELECTED_SCHOOL" , selectedSchool);
+        intent.putExtra("SELECTED_CITY" , selectedCity);
         startActivity(intent);
     }
 
     private void getSchools(String city) {
         schoolService.setCityID(city.split("-")[0]);
-        spiceManager1.start(this);
-        spiceManager1.execute(schoolService , new SchoolServiceListener());
+        spiceManager.execute(schoolService, new SchoolServiceListener());
     }
 
     @Override
@@ -94,7 +99,6 @@ public class HomeActivity extends Activity {
         super.onStart();
         spiceManager.start(this);
         spiceManager.execute(cityService, new RestServiceListener());
-//        spiceManager1.start(this);
     }
 
     public final class SchoolServiceListener implements RequestListener<List> {
@@ -112,9 +116,11 @@ public class HomeActivity extends Activity {
     }
 
     public void updateSchool(final List result) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, result);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        schoolSpinner.setAdapter(adapter);
+        if(result != null) {
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, result);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            schoolSpinner.setAdapter(adapter);
+        }
     }
 
 
@@ -135,8 +141,7 @@ public class HomeActivity extends Activity {
     public void updateContributors(final List result) {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item, result);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spiceManager.shouldStop();
+        citySpinner.setAdapter(adapter);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class LoginActivity extends Activity {
@@ -14,6 +16,10 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        System.out.println(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
+        System.out.println(this.getIntent().getStringExtra("SELECTED_CITY"));
+        TextView schoolName = (TextView)findViewById(R.id.textViewSchoolName);
+        schoolName.setText(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
     }
 
 
