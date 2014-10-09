@@ -23,7 +23,7 @@ public class ContactUsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
         textView = (TextView)findViewById(R.id.textViewContactUs);
-        modelService = new ModelService("101" , "003");
+        modelService = new ModelService("101" , "004");
     }
 
 

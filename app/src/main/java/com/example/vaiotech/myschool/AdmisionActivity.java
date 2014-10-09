@@ -24,9 +24,7 @@ public class AdmisionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admision);
         textView = (TextView)findViewById(R.id.textViewAdmission);
-//        System.out.println(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
-//        System.out.println(this.getIntent().getStringExtra("SELECTED_CITY"));
-        modelService = new ModelService("101" , "001");
+        modelService = new ModelService("101" , "002");
     }
 
 

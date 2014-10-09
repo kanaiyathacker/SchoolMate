@@ -2,6 +2,7 @@ package com.example.vaiotech.myschool;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -16,13 +17,18 @@ import com.octo.android.robospice.SpiceManager;
 public class AboutUsActivity extends Activity {
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
     private RestServiceImpl restServiceImpl;
+    private String selectedSchool;
+    private String selectedCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
-        restServiceImpl = new RestServiceImpl("101","002");
-
+        System.out.println("MenuHomeActivity SELECTED_SCHOOL... "+this.getIntent().getStringExtra("SELECTED_SCHOOL"));
+        System.out.println("MenuHomeActivity SELECTED_CITY... "+this.getIntent().getStringExtra("SELECTED_CITY"));
+        this.selectedSchool = this.getIntent().getStringExtra("SELECTED_SCHOOL");
+        this.selectedCity = this.getIntent().getStringExtra("SELECTED_CITY");
+        restServiceImpl = new RestServiceImpl(this.selectedSchool.split("-")[0].trim(),"001");
     }
 
     @Override

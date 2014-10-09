@@ -3,6 +3,7 @@ package com.example.vaiotech.myschool;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,6 +32,7 @@ public class HomeActivity extends Activity {
     private SchoolService schoolService;
     private String selectedSchool;
     private String selectedCity;
+    public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,13 @@ public class HomeActivity extends Activity {
         System.out.println(citySpinner.getSelectedItem().toString());
         intent.putExtra("SELECTED_SCHOOL" , selectedSchool);
         intent.putExtra("SELECTED_CITY" , selectedCity);
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("SELECTED_CITY", selectedCity);
+        editor.putString("SELECTED_SCHOOL", selectedSchool);
+        editor.commit();
+
         startActivity(intent);
     }
 

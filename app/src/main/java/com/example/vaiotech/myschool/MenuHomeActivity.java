@@ -3,15 +3,18 @@ package com.example.vaiotech.myschool;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MenuHomeActivity extends Activity {
 
     private String selectedSchool;
     private String selectedCity;
+    public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,9 @@ public class MenuHomeActivity extends Activity {
         setContentView(R.layout.activity_home_activity);
         ActionBar actionBar = getActionBar();
         actionBar.setCustomView(R.layout.activity_home_activity);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        this.selectedSchool = settings.getString("SELECTED_SCHOOL", null);
+        this.selectedCity = settings.getString("SELECTED_CITY", null);
     }
 
 
@@ -45,14 +51,12 @@ public class MenuHomeActivity extends Activity {
         switch(item.getItemId()) {
             case R.id.admission:
                 intent = new Intent(this ,AdmisionActivity.class);
-                intent.putExtra("SELECTED_SCHOOL" , selectedSchool);
-                intent.putExtra("SELECTED_CITY" , selectedCity);
                 startActivity(intent);
                 break;
             case R.id.calendar:
                  intent = new Intent(this ,CalendarActivity.class);
-                startActivity(intent);
-                break;
+                 startActivity(intent);
+                 break;
             case R.id.schoolTiming:
                  intent = new Intent(this ,SchoolTimingActivity.class);
                 startActivity(intent);

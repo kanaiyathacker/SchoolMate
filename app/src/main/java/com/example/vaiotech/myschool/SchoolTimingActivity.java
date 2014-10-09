@@ -24,7 +24,7 @@ public class SchoolTimingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school_timing);
         textView = (TextView)findViewById(R.id.textViewSchoolTiming);
-        modelService = new ModelService("101" , "006");
+        modelService = new ModelService("101" , "007");
     }
 
 

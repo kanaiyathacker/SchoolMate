@@ -24,7 +24,7 @@ public class FacultyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty);
         textView = (TextView)findViewById(R.id.textViewFaculty);
-        modelService = new ModelService("101" , "004");
+        modelService = new ModelService("101" , "005");
     }
 
 

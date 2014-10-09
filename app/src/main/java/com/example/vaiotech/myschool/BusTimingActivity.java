@@ -23,7 +23,7 @@ public class BusTimingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus_timing);
         textView = (TextView)findViewById(R.id.textViewBusTiming);
-        modelService = new ModelService("101" , "007");
+        modelService = new ModelService("101" , "008");
     }
 
 

@@ -2,6 +2,7 @@ package com.example.vaiotech.myschool;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,17 +14,21 @@ public class LoginActivity extends Activity {
 
     private String selectedSchool;
     private String selectedCity;
+    public static final String PREFS_NAME = "MyPrefsFile";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        System.out.println(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
-        System.out.println(this.getIntent().getStringExtra("SELECTED_CITY"));
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        System.out.println("SELECTED_SCHOOL... "+settings.getString("SELECTED_SCHOOL" , null));
+        System.out.println("SELECTED_CITY... "+settings.getString("SELECTED_CITY" , null));
         TextView schoolName = (TextView)findViewById(R.id.textViewSchoolName);
-        schoolName.setText(this.getIntent().getStringExtra("SELECTED_SCHOOL"));
-        this.selectedSchool = this.getIntent().getStringExtra("SELECTED_SCHOOL");
-        this.selectedCity = this.getIntent().getStringExtra("SELECTED_CITY");
+        this.selectedSchool = settings.getString("SELECTED_SCHOOL" , null);
+        this.selectedCity = settings.getString("SELECTED_CITY" , null);
+        schoolName.setText(this.selectedSchool);
     }
 
     @Override
@@ -36,8 +41,6 @@ public class LoginActivity extends Activity {
     public void anonymous(View view) {
         Intent intent = new Intent(this ,MenuHomeActivity.class);
         intent.putExtra("LOIN_USER","ANONYMOUS");
-        intent.putExtra("SELECTED_SCHOOL" , selectedSchool);
-        intent.putExtra("SELECTED_CITY" , selectedCity);
         startActivity(intent);
     }
 
