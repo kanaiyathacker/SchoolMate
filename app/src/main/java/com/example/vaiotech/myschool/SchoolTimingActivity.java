@@ -1,6 +1,7 @@
 package com.example.vaiotech.myschool;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,9 @@ public class SchoolTimingActivity extends Activity {
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
     private ModelService modelService;
     private TextView textView;
+    private String selectedSchool;
+    private String selectedCity;
+    public static final String PREFS_NAME = "MyPrefsFile";
 
 
     @Override
@@ -24,7 +28,10 @@ public class SchoolTimingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school_timing);
         textView = (TextView)findViewById(R.id.textViewSchoolTiming);
-        modelService = new ModelService("101" , "007");
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        this.selectedSchool = settings.getString("SELECTED_SCHOOL", null);
+        this.selectedCity = settings.getString("SELECTED_CITY", null);
+        modelService = new ModelService(this.selectedSchool.split("-")[0].trim() , "007");
     }
 
 

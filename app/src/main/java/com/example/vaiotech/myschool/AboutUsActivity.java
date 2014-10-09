@@ -1,6 +1,7 @@
 package com.example.vaiotech.myschool;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.Menu;
@@ -19,15 +20,15 @@ public class AboutUsActivity extends Activity {
     private RestServiceImpl restServiceImpl;
     private String selectedSchool;
     private String selectedCity;
+    public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
-        System.out.println("MenuHomeActivity SELECTED_SCHOOL... "+this.getIntent().getStringExtra("SELECTED_SCHOOL"));
-        System.out.println("MenuHomeActivity SELECTED_CITY... "+this.getIntent().getStringExtra("SELECTED_CITY"));
-        this.selectedSchool = this.getIntent().getStringExtra("SELECTED_SCHOOL");
-        this.selectedCity = this.getIntent().getStringExtra("SELECTED_CITY");
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        this.selectedSchool = settings.getString("SELECTED_SCHOOL", null);
+        this.selectedCity = settings.getString("SELECTED_CITY", null);
         restServiceImpl = new RestServiceImpl(this.selectedSchool.split("-")[0].trim(),"001");
     }
 
