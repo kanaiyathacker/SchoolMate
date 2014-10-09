@@ -2,6 +2,7 @@ package com.example.vaiotech.myschool;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +28,8 @@ public class NewsAndEventsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_and_events);
         textView = (TextView)findViewById(R.id.textViewNewsAndEvents);
-
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Calibri.ttf");
+        textView.setTypeface(font);
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         this.selectedSchool = settings.getString("SELECTED_SCHOOL", null);
         this.selectedCity = settings.getString("SELECTED_CITY", null);

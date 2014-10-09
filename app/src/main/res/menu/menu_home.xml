@@ -4,7 +4,6 @@
     <item android:id="@+id/admission"
         android:title="Admission"
         android:icon="@drawable/admission_icon"
-        android:showAsAction="always"
         />
     <item android:id="@+id/calendar"
 

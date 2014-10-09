@@ -3,6 +3,7 @@ package com.example.vaiotech.myschool;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +27,8 @@ public class LoginActivity extends Activity {
         System.out.println("SELECTED_SCHOOL... "+settings.getString("SELECTED_SCHOOL" , null));
         System.out.println("SELECTED_CITY... "+settings.getString("SELECTED_CITY" , null));
         TextView schoolName = (TextView)findViewById(R.id.textViewSchoolName);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Calibri.ttf");
+        schoolName.setTypeface(font);
         this.selectedSchool = settings.getString("SELECTED_SCHOOL" , null);
         this.selectedCity = settings.getString("SELECTED_CITY" , null);
         schoolName.setText(this.selectedSchool);

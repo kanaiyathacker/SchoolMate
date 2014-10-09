@@ -2,6 +2,7 @@ package com.example.vaiotech.myschool;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.Menu;
@@ -29,6 +30,8 @@ public class AboutUsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         textView = (TextView)findViewById(R.id.textViewAboutUS);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Calibri.ttf");
+        textView.setTypeface(font);
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         this.selectedSchool = settings.getString("SELECTED_SCHOOL", null);
         this.selectedCity = settings.getString("SELECTED_CITY", null);
