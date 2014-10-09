@@ -27,8 +27,6 @@ public class MenuHomeActivity extends Activity {
         this.selectedCity = settings.getString("SELECTED_CITY", null);
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -29,6 +29,38 @@ public class LoginActivity extends Activity {
         TextView schoolName = (TextView)findViewById(R.id.textViewSchoolName);
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Calibri.ttf");
         schoolName.setTypeface(font);
+
+        TextView textViewTKMATS = (TextView)findViewById(R.id.textViewTKMATS);
+        textViewTKMATS.setTypeface(font);
+
+        TextView textViewExiUser = (TextView)findViewById(R.id.textViewExiUser);
+        textViewExiUser.setTypeface(font);
+
+        TextView textViewLoginID = (TextView)findViewById(R.id.textViewLoginID);
+        textViewLoginID.setTypeface(font);
+
+        TextView editTextLoginID = (TextView)findViewById(R.id.editTextLoginID);
+        editTextLoginID.setTypeface(font);
+
+        TextView textViewPassword = (TextView)findViewById(R.id.textViewPassword);
+        textViewPassword.setTypeface(font);
+
+        TextView editTextPassword = (TextView)findViewById(R.id.editTextPassword);
+        editTextPassword.setTypeface(font);
+
+        TextView loginButton = (TextView)findViewById(R.id.loginButton);
+        loginButton.setTypeface(font);
+
+        TextView textViewNewUser = (TextView)findViewById(R.id.textViewNewUser);
+        textViewNewUser.setTypeface(font);
+
+        TextView registration = (TextView)findViewById(R.id.registration);
+        registration.setTypeface(font);
+
+
+
+
+
         this.selectedSchool = settings.getString("SELECTED_SCHOOL" , null);
         this.selectedCity = settings.getString("SELECTED_CITY" , null);
         schoolName.setText(this.selectedSchool);
