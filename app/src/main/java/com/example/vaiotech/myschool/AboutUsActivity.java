@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.octo.android.robospice.persistence.exception.SpiceException;
@@ -17,26 +18,28 @@ import com.octo.android.robospice.SpiceManager;
 
 public class AboutUsActivity extends Activity {
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
-    private RestServiceImpl restServiceImpl;
+    private ModelService modelService;
     private String selectedSchool;
     private String selectedCity;
+    private TextView textView;
     public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
+        textView = (TextView)findViewById(R.id.textViewAboutUS);
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         this.selectedSchool = settings.getString("SELECTED_SCHOOL", null);
         this.selectedCity = settings.getString("SELECTED_CITY", null);
-        restServiceImpl = new RestServiceImpl(this.selectedSchool.split("-")[0].trim(),"001");
+        modelService = new ModelService(this.selectedSchool.split("-")[0].trim(),"001");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         spiceManager.start(this);
-        spiceManager.execute(restServiceImpl , new RestServiceListener());
+        spiceManager.execute(modelService , new RestServiceListener());
     }
 
     @Override
@@ -58,10 +61,6 @@ public class AboutUsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void updateContributors(final String result) {
-        System.out.println("result... " + result);
-    }
-
     public final class RestServiceListener implements RequestListener<String> {
 
         @Override
@@ -72,7 +71,7 @@ public class AboutUsActivity extends Activity {
         @Override
         public void onRequestSuccess(final String result) {
             Toast.makeText(AboutUsActivity.this, "success", Toast.LENGTH_SHORT).show();
-            updateContributors(result);
+            textView.setText(result);
         }
     }
 }
