@@ -9,90 +9,153 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.vaiotech.myschool.LoginActivity">
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/imageView"
-        android:src="@drawable/admission"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-       />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="School Name"
-        android:textSize="18dp"
-        android:id="@+id/textViewSchoolName"
-        android:layout_toRightOf="@+id/imageView"
-       />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="To know more about the school"
-        android:gravity="center"
-        android:id="@+id/textViewTKMATS"
-        android:textSize="18dp"
-        android:layout_below="@+id/imageView"
-        android:layout_marginTop="10dp" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Browse"
-        android:layout_below="@+id/textViewTKMATS"
-        android:id="@+id/anonymousButton"
-        android:layout_centerHorizontal="true"
-        android:layout_weight="0.5"
-        android:onClick="anonymous" />
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_below="@+id/anonymousButton"
-        android:layout_height="2dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/firstHLine"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/darker_gray"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Existing User"
-        android:id="@+id/textViewExiUser"
-        android:textSize="18dp"
-        android:layout_below="@+id/firstHLine" />
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_below="@+id/textViewExiUser"
-        android:id="@+id/linerForLoginID"
-        android:layout_height="wrap_content">
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_below="@+id/textViewExiUser"
+                android:id="@+id/innerLinerForLoginID"
+                android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageView"
+                        android:src="@drawable/admission" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="School Name"
+                        android:textSize="18dp"
+                        android:id="@+id/textViewSchoolName"
+                        android:layout_toRightOf="@+id/imageView"
+                         />
+            </LinearLayout>
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Login ID:"
-            android:id="@+id/textViewLoginID"
+            android:text="To know more about the school"
+            android:gravity="center"
+            android:id="@+id/textViewTKMATS"
             android:textSize="18dp"
-            android:layout_alignBottom="@+id/loginButton"
-            android:layout_toRightOf="@+id/loginButton"
-            android:layout_weight="0.7"
-            android:layout_toEndOf="@+id/loginButton" />
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="10dp" />
 
-        <EditText
-            android:layout_width="0dp"
+        <Button
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:id="@+id/editTextLoginID"
-            android:layout_weight="1.3" />
+            android:text="Browse"
+            android:layout_below="@+id/textViewTKMATS"
+            android:id="@+id/anonymousButton"
+            android:layout_centerHorizontal="true"
+            android:onClick="anonymous" />
 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/anonymousButton"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/firstHLine"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Existing User"
+            android:id="@+id/textViewExiUser"
+            android:textSize="18dp"
+            android:layout_below="@+id/firstHLine" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/textViewExiUser"
+            android:id="@+id/linerForLoginID"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Login ID:"
+                android:id="@+id/textViewLoginID"
+                android:textSize="18dp"
+                android:layout_alignBottom="@+id/loginButton"
+                android:layout_toRightOf="@+id/loginButton"
+                android:layout_weight="0.7"
+                android:layout_toEndOf="@+id/loginButton" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:id="@+id/editTextLoginID"
+                android:layout_weight="1.3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/linerForLoginID"
+            android:id="@+id/linerForPassword"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Password:"
+                android:textSize="18dp"
+                android:id="@+id/textViewPassword"
+                android:layout_alignBottom="@+id/loginButton"
+                android:layout_toRightOf="@+id/loginButton"
+                android:layout_weight="0.7"
+                android:layout_toEndOf="@+id/loginButton" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:id="@+id/editTextPassword"
+                android:layout_weight="1.3" />
+
+        </LinearLayout>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_below="@+id/linerForPassword"
+            android:id="@+id/loginButton"
+            android:onClick="login" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/loginButton"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/secHLine"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"/>
     </LinearLayout>
 
     <LinearLayout
@@ -101,68 +164,31 @@
         android:id="@+id/linerForPassword"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/secHLine"
+            android:id="@+id/linerForNewUser"
+            android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:textSize="18dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Password:"
-            android:textSize="18dp"
-            android:id="@+id/textViewPassword"
-            android:layout_alignBottom="@+id/loginButton"
-            android:layout_toRightOf="@+id/loginButton"
-            android:layout_weight="0.7"
-            android:layout_toEndOf="@+id/loginButton" />
+            android:text="New User ?"
+            android:id="@+id/textViewNewUser"
+             />
 
-        <EditText
+        <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1.3"
             android:textSize="18dp"
-            android:id="@+id/editTextPassword"
-            android:layout_weight="1.3" />
-
+            android:text="Registration"
+            android:id="@+id/registration"
+            android:onClick="register" />
+        </LinearLayout>
     </LinearLayout>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_below="@+id/linerForPassword"
-        android:id="@+id/loginButton"
-        android:onClick="login" />
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_below="@+id/loginButton"
-        android:layout_height="2dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/secHLine"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/darker_gray"/>
-
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_below="@+id/secHLine"
-        android:id="@+id/linerForNewUser"
-        android:layout_height="wrap_content">
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="0.7"
-        android:textSize="18dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="New User ?"
-        android:id="@+id/textViewNewUser"
-         />
-
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1.3"
-        android:textSize="18dp"
-        android:text="Registration"
-        android:id="@+id/registration"
-        android:onClick="register" />
     </LinearLayout>
-
 </RelativeLayout>
