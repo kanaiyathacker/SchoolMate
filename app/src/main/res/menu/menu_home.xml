@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.vaiotech.myschool.MenuHomeActivity" >
+    tools:context="com.vaiotech.schoolmate.MenuHomeActivity" >
     <item android:id="@+id/admission"
         android:title="Admission"
         android:icon="@drawable/admission_icon"
