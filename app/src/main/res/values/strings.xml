@@ -26,5 +26,6 @@
     <string name="title_activity_about_us">AboutUs</string>
     <string name="title_activity_time_table">TimeTable</string>
     <string name="title_activity_daily_time_table">DailyTimeTableActivity</string>
+    <string name="title_activity_student_attendance">StudentAttendanceActivity</string>
 
 </resources>

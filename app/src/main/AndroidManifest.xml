@@ -88,6 +88,10 @@
             android:name="com.vaiotech.schoolmate.DailyTimeTableActivity"
             android:label="@string/title_activity_daily_time_table" >
         </activity>
+        <activity
+            android:name="com.vaiotech.schoolmate.StudentAttendanceActivity"
+            android:label="@string/title_activity_student_attendance" >
+        </activity>
     </application>
 
 </manifest>

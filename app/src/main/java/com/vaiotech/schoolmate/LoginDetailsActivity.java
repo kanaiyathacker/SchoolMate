@@ -100,6 +100,10 @@ public class LoginDetailsActivity extends Activity {
                 intent = new Intent(this ,DailyTimeTableActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.studentAttandance:
+                intent = new Intent(this ,StudentAttendanceActivity.class);
+                startActivity(intent);
+                break;
 
         }
         return super.onOptionsItemSelected(item);

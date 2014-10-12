@@ -48,4 +48,9 @@
         android:orderInCategory="109"
         android:title="Daily Time Table" />
 
+    <item android:id="@+id/studentAttandance"
+        android:icon="@drawable/admission_icon"
+        android:orderInCategory="110"
+        android:title="Student Attendance" />
+
 </menu>
