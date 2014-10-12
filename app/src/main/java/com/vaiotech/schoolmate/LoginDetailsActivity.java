@@ -96,6 +96,11 @@ public class LoginDetailsActivity extends Activity {
                 intent = new Intent(this ,TimeTableActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.dailyTimeTable:
+                intent = new Intent(this ,DailyTimeTableActivity.class);
+                startActivity(intent);
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }

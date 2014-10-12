@@ -12,9 +12,993 @@
     <TextView
         android:text="Monday , 13th October 2014"
         android:textSize="20dp"
+        android:id="@+id/textViewDateTime"
         android:textColor="#ffffffff"
         android:gravity="center"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
 
+    <TableLayout
+        android:layout_below="@+id/textViewDateTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+
+            >
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:background="#ffd0d8e8"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="Period"
+                android:textColor="#000"/>
+
+
+            <TextView
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:textSize="15sp"
+                android:layout_span="1"
+                android:layout_margin="1dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="Details"
+                android:background="#ffd0d8e8"
+                android:textColor="#000"/>
+
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:background="#ffe9edf4"
+                android:text="Physics"
+                android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:background="#ffe9edf4"
+                android:text="teacher name"
+                android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+
+                android:id="@+id/linearStudentName"
+                android:background="#ffe9edf4"
+                android:text="Special Notes:"
+                android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="Physics"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="(8:00 - 9:30)"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teacher name"
+                    android:textColor="#000"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#ffe9edf4"
+                    android:text="teackeremailssss"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_margin="1dp"
+
+                android:background="#ffe9edf4"
+                android:textColor="#000" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+
+                    android:id="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/linearStudentName"
+                    android:background="#ffe9edf4"
+                    android:text="Special Notes:"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+    </TableLayout>
+    </ScrollView>
 </RelativeLayout>

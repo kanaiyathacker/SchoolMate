@@ -42,4 +42,10 @@
         android:icon="@drawable/admission_icon"
         android:orderInCategory="108"
         android:title="Weekly Time Table" />
+
+    <item android:id="@+id/dailyTimeTable"
+        android:icon="@drawable/admission_icon"
+        android:orderInCategory="109"
+        android:title="Daily Time Table" />
+
 </menu>
