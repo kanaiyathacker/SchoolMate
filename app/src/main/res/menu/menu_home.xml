@@ -3,12 +3,10 @@
     tools:context="com.vaiotech.schoolmate.MenuHomeActivity" >
     <item android:id="@+id/admission"
         android:title="Admission"
-        android:icon="@drawable/admission_icon"
+        android:checked="true"
+        android:icon="@drawable/announcement_128"
         />
-    <item android:id="@+id/calendar"
 
-        android:icon="@drawable/admission_icon"
-        android:title="Calendar" />
     <item android:id="@+id/schoolTiming"
         android:icon="@drawable/admission_icon"
         
@@ -25,14 +23,11 @@
         
         android:icon="@drawable/admission_icon"
         android:title="Career" />
-    <item android:id="@+id/fees"
-        
-        android:icon="@drawable/admission_icon"
-        android:title="Fees" />
+
     <item android:id="@+id/faculty"
         android:icon="@drawable/admission_icon"
         
-        android:title="Faculty" />
+        android:title="Facility" />
     <item android:id="@+id/contactUs"
         android:icon="@drawable/admission_icon"
         

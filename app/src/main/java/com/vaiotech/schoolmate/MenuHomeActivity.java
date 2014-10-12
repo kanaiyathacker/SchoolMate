@@ -23,6 +23,10 @@ public class MenuHomeActivity extends Activity {
         setContentView(R.layout.activity_home_activity);
         ActionBar actionBar = getActionBar();
         actionBar.setCustomView(R.layout.activity_home_activity);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         this.selectedSchool = settings.getString("SELECTED_SCHOOL", null);
         this.selectedCity = settings.getString("SELECTED_CITY", null);
@@ -33,7 +37,16 @@ public class MenuHomeActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu_home, menu);
+
         return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        menu.getItem(0).setIcon(R.drawable.announcement_128);
+        System.out.println("ONprepare..." + menu.getItem(0).getIcon());
+        return super.onPrepareOptionsMenu(menu);
+
     }
 
     @Override
@@ -52,10 +65,7 @@ public class MenuHomeActivity extends Activity {
                 intent = new Intent(this ,AdmisionActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.calendar:
-                 intent = new Intent(this ,CalendarActivity.class);
-                 startActivity(intent);
-                 break;
+
             case R.id.schoolTiming:
                  intent = new Intent(this ,SchoolTimingActivity.class);
                 startActivity(intent);
@@ -72,10 +82,7 @@ public class MenuHomeActivity extends Activity {
                  intent = new Intent(this ,CareerActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.fees:
-                 intent = new Intent(this ,FeesActivity.class);
-                startActivity(intent);
-                break;
+
             case R.id.faculty:
                  intent = new Intent(this ,FacultyActivity.class);
                 startActivity(intent);

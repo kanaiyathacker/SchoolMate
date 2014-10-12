@@ -46,7 +46,6 @@ public class HomeActivity extends Activity {
         citySpinner = (Spinner)findViewById(R.id.stateSpinner);
         schoolSpinner = (Spinner) findViewById(R.id.schoolSpinner);
         citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String city = (String) adapterView.getItemAtPosition(i);
@@ -127,7 +126,7 @@ public class HomeActivity extends Activity {
 
     public void updateSchool(final List result) {
         if(result != null) {
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, result);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, R.layout.spinner_item, result);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             schoolSpinner.setAdapter(adapter);
         }
@@ -149,7 +148,7 @@ public class HomeActivity extends Activity {
     }
 
     public void updateContributors(final List result) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item, result);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.spinner_item, result);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         citySpinner.setAdapter(adapter);
     }

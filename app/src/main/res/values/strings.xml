@@ -11,13 +11,13 @@
     </string-array>
 
     <string name="title_activity_login">Login</string>
-    <string name="title_activity_menu_home">MenuHomeActivity</string>
+    <string name="title_activity_menu_home">Menu Home </string>
     <string name="title_activity_login_details">LoginDetails</string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_admision">Admission</string>
     <string name="title_activity_calendar">Calendar</string>
-    <string name="title_activity_school_timing">SchoolTiming</string>
-    <string name="title_activity_bus_timing">BusTiming</string>
+    <string name="title_activity_school_timing">School Timing</string>
+    <string name="title_activity_bus_timing">Bus Timing</string>
     <string name="title_activity_news_and_events">News And Events</string>
     <string name="title_activity_career">Career</string>
     <string name="title_activity_fees">Fees</string>
