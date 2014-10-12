@@ -41,13 +41,7 @@ public class MenuHomeActivity extends Activity {
         return true;
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        menu.getItem(0).setIcon(R.drawable.announcement_128);
-        System.out.println("ONprepare..." + menu.getItem(0).getIcon());
-        return super.onPrepareOptionsMenu(menu);
 
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

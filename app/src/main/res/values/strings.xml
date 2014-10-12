@@ -24,5 +24,7 @@
     <string name="title_activity_faculty">Faculty</string>
     <string name="title_activity_contact_us">ContactUs</string>
     <string name="title_activity_about_us">AboutUs</string>
+    <string name="title_activity_time_table">TimeTable</string>
+    <string name="title_activity_daily_time_table">DailyTimeTableActivity</string>
 
 </resources>
