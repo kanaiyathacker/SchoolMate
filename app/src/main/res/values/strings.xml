@@ -10,6 +10,15 @@
         <item>Gujarat</item>
     </string-array>
 
+    <string-array name="daySpinner">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_menu_home">Menu Home </string>
     <string name="title_activity_login_details">LoginDetails</string>
