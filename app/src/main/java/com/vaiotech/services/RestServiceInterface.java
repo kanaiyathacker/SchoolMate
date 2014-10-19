@@ -19,9 +19,9 @@ public interface RestServiceInterface {
     @GET("/myschool/myschoolID/{schoolID}/modelID/{modelID}")
     Object getModelDesc(@Path("schoolID") String schoolID , @Path("modelID") String modelID );
 
-    @GET("/weekly/schoolID/{schoolID}/className/{className}/section/{section}/")
+    @GET("/myschoolTimeTable/weekly/schoolID/{schoolID}/className/{className}/section/{section}/")
     Object getWeeklyTimeTable(@Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section);
 
-    @GET("/day/{day}/schoolID/{schoolID}/className/{className}/section/{section}/")
+    @GET("/myschoolTimeTable/day/{day}/schoolID/{schoolID}/className/{className}/section/{section}/")
     Object getDayTimeTable(@Path("day") String day , @Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section);
 }

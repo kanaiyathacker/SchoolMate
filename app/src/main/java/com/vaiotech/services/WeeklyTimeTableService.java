@@ -24,8 +24,13 @@ public class WeeklyTimeTableService extends RetrofitSpiceRequest<List , RestServ
 
     @Override
     public List loadDataFromNetwork() throws Exception {
+        System.out.println(schoolID);
+        System.out.println(className);
+        System.out.println(section);
         List<String> retVal = new ArrayList();
         List<LinkedTreeMap> list = (List<LinkedTreeMap>) getService().getWeeklyTimeTable(schoolID,className,section);
-        return retVal;
+        System.out.println("..... " + list);
+        return list;
+
     }
 }

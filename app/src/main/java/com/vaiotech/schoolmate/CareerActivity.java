@@ -34,7 +34,7 @@ public class CareerActivity extends Activity {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         this.selectedSchool = settings.getString("SELECTED_SCHOOL", null);
         this.selectedCity = settings.getString("SELECTED_CITY", null);
-        modelService = new ModelService(this.selectedSchool.split("-")[0].trim() , "003");
+        modelService = new ModelService(this.selectedSchool.split("-")[0].trim() , "3");
     }
 
 

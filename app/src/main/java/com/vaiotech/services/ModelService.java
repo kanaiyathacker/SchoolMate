@@ -23,7 +23,7 @@ public class ModelService extends RetrofitSpiceRequest<String , RestServiceInter
         LinkedTreeMap map = (LinkedTreeMap) getService().getModelDesc(schoolID , modelID);
         if(map != null && !map.isEmpty()) {
             System.out.println("map..." + map);
-            retVal = map.get("description").toString();
+            retVal = map.get("desc").toString();
         }
         return retVal;
     }

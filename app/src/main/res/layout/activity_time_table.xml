@@ -11,10 +11,10 @@
 
    <LinearLayout
        android:id="@+id/linerTTHeader"
-       android:layout_width="fill_parent"
-       android:layout_height="wrap_content">
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
        <TextView
-           android:layout_width="wrap_content"
+           android:layout_width="0dp"
            android:layout_weight="0.5"
            android:layout_height="wrap_content"
            android:textAppearance="?android:attr/textAppearanceLarge"
@@ -22,46 +22,74 @@
            android:textColor="#ffffffff"
            android:id="@+id/textViewTTDay"
             />
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_weight="1"
+       <Spinner
+           android:layout_width="0dp"
            android:layout_height="wrap_content"
-           android:textAppearance="?android:attr/textAppearanceLarge"
-           android:text="Periods"
-           android:textColor="#ffffffff"
-           android:id="@+id/textViewTTPeriods"
-            />
+           android:id="@+id/spinner"
+           android:entries="@array/daySpinner"
+           android:layout_weight="1" />
    </LinearLayout>
     <LinearLayout
+        android:id="@+id/lPeriod1"
         android:layout_below="@+id/linerTTHeader"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Day"
+            android:text="Periods"
             android:textColor="#ffffffff"
-            android:id="@+id/textViewTTDayVal"
+            android:id="@+id/textViewPeriods1"
             />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lPeriod2"
+        android:layout_below="@+id/lPeriod1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Periods"
             android:textColor="#ffffffff"
-            android:id="@+id/textViewTTPeriodsValue"
+            android:id="@+id/textViewPeriods2"
             />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lPeriod3"
+        android:layout_below="@+id/lPeriod2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Periods"
             android:textColor="#ffffffff"
-            android:id="@+id/textViewTTPeriodsValue1"
+            android:id="@+id/textViewPeriods3"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lPeriod4"
+        android:layout_below="@+id/lPeriod3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Periods"
+            android:textColor="#ffffffff"
+            android:id="@+id/textViewPeriods4"
             />
     </LinearLayout>
 </RelativeLayout>
