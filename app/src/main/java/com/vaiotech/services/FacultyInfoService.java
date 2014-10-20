@@ -26,8 +26,8 @@ public class FacultyInfoService extends RetrofitSpiceRequest<Map , RestServiceIn
     @Override
     public Map loadDataFromNetwork() throws java.lang.Exception{
         String retVal = null;
-        Map map = (Map) getService().getFacultyInfo(schoolID , className, section);
-        return map;
+//        Map map = (Map) getService().getFacultyInfo(schoolID , className, section);
+        return null;
     }
 }
 

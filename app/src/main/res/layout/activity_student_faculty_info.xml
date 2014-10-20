@@ -105,6 +105,7 @@
                 />
             <TextView
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Teacher Details"
@@ -112,5 +113,12 @@
                 android:layout_marginLeft="10dp"
                 android:id="@+id/textViewTeacherRoleDetailsHeader"
                 />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeFour"
+        android:layout_below="@+id/relativeSec"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
     </RelativeLayout>
 </RelativeLayout>
