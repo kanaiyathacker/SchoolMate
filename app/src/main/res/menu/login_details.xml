@@ -53,4 +53,9 @@
         android:orderInCategory="110"
         android:title="Student Attendance" />
 
+    <item android:id="@+id/studentFacultyInfo"
+        android:icon="@drawable/admission_icon"
+        android:orderInCategory="111"
+        android:title="Student Faculty Info" />
+
 </menu>
