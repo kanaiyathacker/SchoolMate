@@ -8,9 +8,109 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.vaiotech.schoolmate.StudentFacultyInfoActivity">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
+    <RelativeLayout
+        android:id="@+id/relativeFirst"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Faculty Info for"
+            android:id="@+id/textViewFacultyInfoFor"
+            android:gravity="center"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeSec"
+        android:layout_below="@+id/relativeFirst"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Class: 8"
+            android:id="@+id/textViewClassName"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Sec: A"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/textViewSection"
+            android:layout_toRightOf="@+id/textViewClassName"
+            />
+        <RelativeLayout
+            android:layout_toRightOf="@+id/textViewSection"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Student Name: "
+                android:id="@+id/textViewStudentName"
+                />
+            <TextView
+                android:layout_toRightOf="@+id/textViewStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Class: 8"
+                android:id="@+id/textViewStudentNameValue"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Roll No: "
+                android:id="@+id/textViewStudentRollNo"
+                android:layout_below="@+id/textViewStudentNameValue"
+                />
+            <TextView
+                android:layout_below="@+id/textViewStudentNameValue"
+                android:layout_toRightOf="@+id/textViewStudentRollNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Class: 8"
+                android:id="@+id/textViewStudentRollNoValue"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/relativeThird"
+            android:layout_below="@+id/relativeSec"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Teacher Role"
+                android:id="@+id/textViewTeacherRoleHeader"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Teacher Details"
+                android:layout_toRightOf="@+id/textViewTeacherRoleHeader"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/textViewTeacherRoleDetailsHeader"
+                />
+    </RelativeLayout>
 </RelativeLayout>
