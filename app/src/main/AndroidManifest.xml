@@ -92,6 +92,10 @@
             android:name="com.vaiotech.schoolmate.StudentAttendanceActivity"
             android:label="@string/title_activity_student_attendance" >
         </activity>
+        <activity
+            android:name="com.vaiotech.schoolmate.StudentFacultyInfoActivity"
+            android:label="@string/title_activity_student_faculty_info" >
+        </activity>
     </application>
 
 </manifest>
