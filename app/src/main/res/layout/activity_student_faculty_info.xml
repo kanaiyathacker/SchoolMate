@@ -5,13 +5,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#2C3E50"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.vaiotech.schoolmate.StudentFacultyInfoActivity">
 
 
     <RelativeLayout
         android:id="@+id/relativeFirst"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
        >
 
@@ -22,6 +23,7 @@
             android:text="Faculty Info for"
             android:id="@+id/textViewFacultyInfoFor"
             android:gravity="center"
+            android:textColor="#ffffffff"
             />
 
     </RelativeLayout>
@@ -36,7 +38,8 @@
             android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
-            android:gravity="center"
+            android:gravity="left"
+            android:textColor="#ffffffff"
             android:layout_weight="1"
             android:id="@+id/textViewClassName"
             />
@@ -46,6 +49,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:gravity="center"
+            android:textColor="#ffffffff"
             android:layout_marginLeft="10dp"
             android:id="@+id/textViewSection"
             android:layout_weight="1"
@@ -54,9 +58,10 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="right"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
+            android:textColor="#ffffffff"
             android:id="@+id/textViewStudentRollNoValue"
             />
     </LinearLayout>
@@ -71,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Name: "
+                android:textColor="#ffffffff"
                 android:id="@+id/textViewStudentName"
                 />
             <TextView
@@ -80,10 +86,12 @@
                 android:layout_marginLeft="10dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
+                android:textColor="#ffffffff"
                 android:id="@+id/textViewStudentNameValue"
                 />
     </RelativeLayout>
     <ScrollView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView"
@@ -105,6 +113,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Teacher Role"
                         android:layout_weight="0.7"
+                        android:textColor="#ffffffff"
                         android:id="@+id/textViewTeacherRoleHeader"
                         />
                     <TextView
@@ -113,6 +122,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Teacher Details"
                         android:layout_weight="1"
+                        android:textColor="#ffffffff"
                         android:id="@+id/textViewTeacherRoleDetailsHeader"
                      />
             </LinearLayout>
@@ -127,6 +137,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_weight="0.7"
                     android:id="@+id/textViewTeacherRole1"
                     />
@@ -135,6 +146,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_weight="1"
                     android:id="@+id/textViewTeacherRoleDetails1"
                     />
@@ -150,6 +162,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_weight="0.7"
                     android:id="@+id/textViewTeacherRole2"
                     />
@@ -158,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_weight="1"
                     android:id="@+id/textViewTeacherRoleDetails2"
                     />
@@ -173,6 +187,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_weight="0.7"
                     android:id="@+id/textViewTeacherRole3"
                     />
@@ -182,6 +197,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:id="@+id/textViewTeacherRoleDetails3"
                     />
             </LinearLayout>
@@ -196,6 +212,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_weight="0.7"
                     android:id="@+id/textViewTeacherRole4"
                     />
@@ -205,6 +222,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_toRightOf="@+id/textViewTeacherRole4"
                     android:id="@+id/textViewTeacherRoleDetails4"
                     />
@@ -220,6 +238,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_weight="0.7"
                     android:id="@+id/textViewTeacherRole5"
                     />
@@ -229,6 +248,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_toRightOf="@+id/textViewTeacherRole5"
                     android:id="@+id/textViewTeacherRoleDetails5"
                     />
@@ -244,6 +264,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_weight="0.7"
                     android:id="@+id/textViewTeacherRole6"
                     />
@@ -253,8 +274,243 @@
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text=""
+                    android:textColor="#ffffffff"
                     android:layout_toRightOf="@+id/textViewTeacherRole6"
                     android:id="@+id/textViewTeacherRoleDetails6"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeTen"
+                android:layout_below="@+id/relativeNine"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole7"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole7"
+                    android:id="@+id/textViewTeacherRoleDetails7"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeEleven"
+                android:layout_below="@+id/relativeTen"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole8"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole8"
+                    android:id="@+id/textViewTeacherRoleDetails8"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeTwelve"
+                android:layout_below="@+id/relativeEleven"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole9"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole9"
+                    android:id="@+id/textViewTeacherRoleDetails9"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeThirteen"
+                android:layout_below="@+id/relativeTwelve"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole10"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole10"
+                    android:id="@+id/textViewTeacherRoleDetails10"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeFourteen"
+                android:layout_below="@+id/relativeThirteen"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole11"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole11"
+                    android:id="@+id/textViewTeacherRoleDetails11"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeFifteen"
+                android:layout_below="@+id/relativeFourteen"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole12"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole12"
+                    android:id="@+id/textViewTeacherRoleDetails12"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeSixteen"
+                android:layout_below="@+id/relativeFifteen"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole13"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole13"
+                    android:id="@+id/textViewTeacherRoleDetails13"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeSeventeen"
+                android:layout_below="@+id/relativeSixteen"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole14"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole14"
+                    android:id="@+id/textViewTeacherRoleDetails14"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeEighteen"
+                android:layout_below="@+id/relativeSeventeen"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole15"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:textColor="#ffffffff"
+                    android:layout_toRightOf="@+id/textViewTeacherRole15"
+                    android:id="@+id/textViewTeacherRoleDetails15"
                     />
             </LinearLayout>
         </RelativeLayout>
