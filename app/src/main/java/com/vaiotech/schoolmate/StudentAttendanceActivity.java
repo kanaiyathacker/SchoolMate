@@ -129,7 +129,7 @@ public class StudentAttendanceActivity extends Activity  implements WeekView.Mon
             Calendar endTime = (Calendar) startTime.clone();
             endTime.add(Calendar.HOUR, 1);
             endTime.set(Calendar.MONTH, newMonth-1);
-            WeekViewEvent event = new WeekViewEvent(1, getEventTitle(startTime), startTime, endTime);
+            WeekViewEvent event = new WeekViewEvent(1, "Maths", startTime, endTime);
             event.setColor(getResources().getColor(R.color.event_color_01));
             events.add(event);
 
@@ -142,7 +142,7 @@ public class StudentAttendanceActivity extends Activity  implements WeekView.Mon
             endTime.set(Calendar.HOUR_OF_DAY, 4);
             endTime.set(Calendar.MINUTE, 30);
             endTime.set(Calendar.MONTH, newMonth-1);
-            event = new WeekViewEvent(10, getEventTitle(startTime), startTime, endTime);
+            event = new WeekViewEvent(10, "Physics", startTime, endTime);
             event.setColor(getResources().getColor(R.color.event_color_02));
             events.add(event);
 
@@ -154,7 +154,7 @@ public class StudentAttendanceActivity extends Activity  implements WeekView.Mon
             endTime = (Calendar) startTime.clone();
             endTime.set(Calendar.HOUR_OF_DAY, 5);
             endTime.set(Calendar.MINUTE, 0);
-            event = new WeekViewEvent(10, getEventTitle(startTime), startTime, endTime);
+            event = new WeekViewEvent(10, "Chemistry", startTime, endTime);
             event.setColor(getResources().getColor(R.color.event_color_03));
             events.add(event);
 
