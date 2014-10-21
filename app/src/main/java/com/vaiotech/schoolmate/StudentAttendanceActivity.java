@@ -103,7 +103,7 @@ public class StudentAttendanceActivity extends Activity  implements WeekView.Mon
     }
 
         private String getEventTitle(Calendar time) {
-            return String.format("Event of %02d:%02d %s/%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
+            return String.format("Event of %02d:%02d %s/s%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
         }
 
         @Override
