@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +38,19 @@ public class StudentFacultyInfoActivity extends Activity {
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
         String studentInfoJson = sharedPreferences.getString("STUDENT_INFO" , null);
         Student studentInfo = new Gson().fromJson(studentInfoJson , Student.class);
-        facultyInfoService = new FacultyInfoService("101" , studentInfo.getClassName() , studentInfo.getSection());
+        TextView  textViewClassName = (TextView)findViewById(R.id.textViewClassName);
+        textViewClassName.setText("Class: "+studentInfo.getClassName());
+
+        TextView  textViewSection = (TextView)findViewById(R.id.textViewSection);
+        textViewSection.setText("Sec: "+studentInfo.getSection());
+
+        TextView  textViewStudentNameValue = (TextView)findViewById(R.id.textViewStudentNameValue);
+        textViewStudentNameValue.setText(studentInfo.getfName());
+
+        TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
+        textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
+        facultyInfoService = new FacultyInfoService(studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection());
+        context = this;
     }
 
     @Override
@@ -48,7 +61,7 @@ public class StudentFacultyInfoActivity extends Activity {
     }
 
 
-    public final class RestServiceListener implements RequestListener<Map> {
+    public final class RestServiceListener implements RequestListener<List> {
 
         @Override
         public void onRequestFailure(SpiceException spiceException) {
@@ -56,11 +69,48 @@ public class StudentFacultyInfoActivity extends Activity {
         }
 
         @Override
-        public void onRequestSuccess(Map list) {
-
+        public void onRequestSuccess(List list) {
+            System.out.println("List..." + list);
+            int count = 1;
+            for(Object currVal : list) {
+                Map map = (Map)currVal;
+                switch (count) {
+                    case 1 :
+                          TextView tr1 = (TextView) findViewById(R.id.textViewTeacherRole1);
+                          TextView trd1 = (TextView) findViewById(R.id.textViewTeacherRoleDetails1);
+                          tr1.setText(map.get("teacherRole").toString());
+                          trd1.setText(map.get("teacherName").toString() +"\n" + map.get("teacherEmail").toString());
+                        break;
+                    case 2 :
+                          TextView tr2 = (TextView) findViewById(R.id.textViewTeacherRole2);
+                          TextView trd2 = (TextView) findViewById(R.id.textViewTeacherRoleDetails2);
+                          tr2.setText(map.get("teacherRole").toString());
+                          trd2.setText(map.get("teacherName").toString() +"\n" + map.get("teacherEmail").toString());
+                        break;
+                    case 3 :
+                        TextView tr3 = (TextView) findViewById(R.id.textViewTeacherRole3);
+                        TextView trd3 = (TextView) findViewById(R.id.textViewTeacherRoleDetails3);
+                        tr3.setText(map.get("teacherRole").toString());
+                        trd3.setText(map.get("teacherName").toString() +"\n" + map.get("teacherEmail").toString());
+                        break;
+                    case 4 :
+                        TextView tr4 = (TextView) findViewById(R.id.textViewTeacherRole4);
+                        TextView trd4 = (TextView) findViewById(R.id.textViewTeacherRoleDetails4);
+                        tr4.setText(map.get("teacherRole").toString());
+                        trd4.setText(map.get("teacherName").toString() +"\n" + map.get("teacherEmail").toString());
+                        break;
+                    case 5 :
+                        TextView tr5 = (TextView) findViewById(R.id.textViewTeacherRole5);
+                        TextView trd5 = (TextView) findViewById(R.id.textViewTeacherRoleDetails5);
+                        tr5.setText(map.get("teacherRole").toString());
+                        trd5.setText(map.get("teacherName").toString() +"\n" + map.get("teacherEmail").toString());
+                        break;
+                    default:
+                        break;
+                }
+                count++;
+            }
         }
-
-
     }
 
     @Override

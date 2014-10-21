@@ -16,7 +16,7 @@
        >
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Faculty Info for"
@@ -25,73 +25,43 @@
             />
 
     </RelativeLayout>
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/relativeSec"
         android:layout_below="@+id/relativeFirst"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Class: 8"
+            android:text=""
+            android:gravity="center"
+            android:layout_weight="1"
             android:id="@+id/textViewClassName"
             />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Sec: A"
+            android:text=""
+            android:gravity="center"
             android:layout_marginLeft="10dp"
             android:id="@+id/textViewSection"
-            android:layout_toRightOf="@+id/textViewClassName"
+            android:layout_weight="1"
             />
-        <RelativeLayout
-            android:layout_toRightOf="@+id/textViewSection"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Student Name: "
-                android:id="@+id/textViewStudentName"
-                />
-            <TextView
-                android:layout_toRightOf="@+id/textViewStudentName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Class: 8"
-                android:id="@+id/textViewStudentNameValue"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Roll No: "
-                android:id="@+id/textViewStudentRollNo"
-                android:layout_below="@+id/textViewStudentNameValue"
-                />
-            <TextView
-                android:layout_below="@+id/textViewStudentNameValue"
-                android:layout_toRightOf="@+id/textViewStudentRollNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Class: 8"
-                android:id="@+id/textViewStudentRollNoValue"
-                />
-        </RelativeLayout>
-    </RelativeLayout>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textViewStudentRollNoValue"
+            />
+    </LinearLayout>
     <RelativeLayout
-            android:id="@+id/relativeThird"
+        android:id="@+id/relativeStudentSection"
             android:layout_below="@+id/relativeSec"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -100,25 +70,193 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Teacher Role"
-                android:id="@+id/textViewTeacherRoleHeader"
+                android:text="Name: "
+                android:id="@+id/textViewStudentName"
                 />
             <TextView
+                android:layout_toRightOf="@+id/textViewStudentName"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Teacher Details"
-                android:layout_toRightOf="@+id/textViewTeacherRoleHeader"
                 android:layout_marginLeft="10dp"
-                android:id="@+id/textViewTeacherRoleDetailsHeader"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text=""
+                android:id="@+id/textViewStudentNameValue"
                 />
     </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/relativeFour"
-        android:layout_below="@+id/relativeSec"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        >
-    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/relativeStudentSection">
+        <RelativeLayout
+            android:id="@+id/relativeScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relativeSec"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeThird"
+                >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Teacher Role"
+                        android:layout_weight="0.7"
+                        android:id="@+id/textViewTeacherRoleHeader"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Teacher Details"
+                        android:layout_weight="1"
+                        android:id="@+id/textViewTeacherRoleDetailsHeader"
+                     />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeFour"
+                android:layout_below="@+id/relativeThird"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole1"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_weight="1"
+                    android:id="@+id/textViewTeacherRoleDetails1"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeFive"
+                android:layout_below="@+id/relativeFour"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole2"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_weight="1"
+                    android:id="@+id/textViewTeacherRoleDetails2"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeSix"
+                android:layout_below="@+id/relativeFive"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole3"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:id="@+id/textViewTeacherRoleDetails3"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeSeven"
+                android:layout_below="@+id/relativeSix"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole4"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_toRightOf="@+id/textViewTeacherRole4"
+                    android:id="@+id/textViewTeacherRoleDetails4"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeEight"
+                android:layout_below="@+id/relativeSeven"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole5"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_toRightOf="@+id/textViewTeacherRole5"
+                    android:id="@+id/textViewTeacherRoleDetails5"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeNine"
+                android:layout_below="@+id/relativeEight"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_weight="0.7"
+                    android:id="@+id/textViewTeacherRole6"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text=""
+                    android:layout_toRightOf="@+id/textViewTeacherRole6"
+                    android:id="@+id/textViewTeacherRoleDetails6"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

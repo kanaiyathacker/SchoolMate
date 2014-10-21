@@ -25,6 +25,6 @@ public interface RestServiceInterface {
     @GET("/myschoolTimeTable/day/{day}/schoolID/{schoolID}/className/{className}/section/{section}/")
     Object getDayTimeTable(@Path("day") String day , @Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section);
 
-    @GET("schoolMate/facultyInfo/{schoolID}/{className}/{section}/")
+    @GET("/schoolMate/facultyInfo/{schoolID}/{className}/{section}")
     Object getFacultyInfo(@Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section);
 }
