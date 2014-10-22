@@ -5,31 +5,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#2C3E50"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.vaiotech.schoolmate.StudentFacultyInfoActivity">
 
 
-    <RelativeLayout
-        android:id="@+id/relativeFirst"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Faculty Info for"
-            android:id="@+id/textViewFacultyInfoFor"
-            android:gravity="center"
-            android:textColor="#ffffffff"
-            />
-
-    </RelativeLayout>
     <LinearLayout
         android:id="@+id/relativeSec"
-        android:layout_below="@+id/relativeFirst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -39,7 +20,6 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:gravity="left"
-            android:textColor="#ffffffff"
             android:layout_weight="1"
             android:id="@+id/textViewClassName"
             />
@@ -49,7 +29,6 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:gravity="center"
-            android:textColor="#ffffffff"
             android:layout_marginLeft="10dp"
             android:id="@+id/textViewSection"
             android:layout_weight="1"
@@ -61,7 +40,6 @@
             android:gravity="right"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
-            android:textColor="#ffffffff"
             android:id="@+id/textViewStudentRollNoValue"
             />
     </LinearLayout>
@@ -75,8 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Name: "
-                android:textColor="#ffffffff"
+                android:text="Name:"
                 android:id="@+id/textViewStudentName"
                 />
             <TextView
@@ -86,7 +63,6 @@
                 android:layout_marginLeft="10dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text=""
-                android:textColor="#ffffffff"
                 android:id="@+id/textViewStudentNameValue"
                 />
     </RelativeLayout>
@@ -102,417 +78,258 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/relativeSec"
             >
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:id="@+id/relativeOne"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/relativeThird"
+                android:padding="5dp"
+                android:background="#ff830101"
                 >
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Teacher Role"
-                        android:layout_weight="0.7"
-                        android:textColor="#ffffffff"
-                        android:id="@+id/textViewTeacherRoleHeader"
-                        />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Teacher Details"
-                        android:layout_weight="1"
-                        android:textColor="#ffffffff"
-                        android:id="@+id/textViewTeacherRoleDetailsHeader"
-                     />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameOne"
+                    android:textColor="#ffffffff" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameOne"
+                    android:id="@+id/textViewEmailOne"
+                    android:textColor="#ffffffff" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:id="@+id/relativeTwo"
+                android:layout_below="@+id/relativeOne"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="#ffbfbfbf"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameTwo"
+                    android:textColor="#ff000000" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameTwo"
+                    android:id="@+id/textViewEmailTwo"
+                    android:textColor="#ff000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeThree"
+                android:layout_below="@+id/relativeTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff830101"
+                >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameThree"
+                    android:textColor="#ffffffff" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameThree"
+                    android:id="@+id/textViewEmailThree"
+                    android:textColor="#ffffffff" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:id="@+id/relativeFour"
-                android:layout_below="@+id/relativeThird"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole1"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="1"
-                    android:id="@+id/textViewTeacherRoleDetails1"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_below="@+id/relativeThree"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="#ffbfbfbf"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameFour"
+                    android:textColor="#ff000000" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameFour"
+                    android:id="@+id/textViewEmailFour"
+                    android:textColor="#ff000000" />
+            </RelativeLayout>
+            <RelativeLayout
                 android:id="@+id/relativeFive"
                 android:layout_below="@+id/relativeFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff830101"
                 >
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole2"
-                    />
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameFive"
+                    android:textColor="#ffffffff" />
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="1"
-                    android:id="@+id/textViewTeacherRoleDetails2"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameFive"
+                    android:id="@+id/textViewEmailFive"
+                    android:textColor="#ffffffff" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:id="@+id/relativeSix"
                 android:layout_below="@+id/relativeFive"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="#ffbfbfbf"
                 >
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole3"
-                    />
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameSix"
+                    android:textColor="#ff000000" />
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:id="@+id/textViewTeacherRoleDetails3"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameSix"
+                    android:id="@+id/textViewEmailSix"
+                    android:textColor="#ff000000" />
+            </RelativeLayout>
+            <RelativeLayout
                 android:id="@+id/relativeSeven"
                 android:layout_below="@+id/relativeSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff830101"
                 >
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole4"
-                    />
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameSeven"
+                    android:textColor="#ffffffff" />
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole4"
-                    android:id="@+id/textViewTeacherRoleDetails4"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameSeven"
+                    android:id="@+id/textViewEmailSeven"
+                    android:textColor="#ffffffff" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:id="@+id/relativeEight"
                 android:layout_below="@+id/relativeSeven"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="#ffbfbfbf"
                 >
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole5"
-                    />
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameEight"
+                    android:textColor="#ff000000" />
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole5"
-                    android:id="@+id/textViewTeacherRoleDetails5"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameEight"
+                    android:id="@+id/textViewEmailEight"
+                    android:textColor="#ff000000" />
+            </RelativeLayout>
+            <RelativeLayout
                 android:id="@+id/relativeNine"
                 android:layout_below="@+id/relativeEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#ff830101"
                 >
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole6"
-                    />
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameNine"
+                    android:textColor="#ffffffff" />
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole6"
-                    android:id="@+id/textViewTeacherRoleDetails6"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameNine"
+                    android:id="@+id/textViewEmailNine"
+                    android:textColor="#ffffffff" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:id="@+id/relativeTen"
                 android:layout_below="@+id/relativeNine"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole7"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole7"
-                    android:id="@+id/textViewTeacherRoleDetails7"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/relativeEleven"
-                android:layout_below="@+id/relativeTen"
+                android:padding="5dp"
+                android:background="#ffbfbfbf"
                 >
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole8"
-                    />
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNameTen"
+                    android:textColor="#ff000000" />
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole8"
-                    android:id="@+id/textViewTeacherRoleDetails8"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/relativeTwelve"
-                android:layout_below="@+id/relativeEleven"
-                >
-                <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole9"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole9"
-                    android:id="@+id/textViewTeacherRoleDetails9"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/relativeThirteen"
-                android:layout_below="@+id/relativeTwelve"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole10"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole10"
-                    android:id="@+id/textViewTeacherRoleDetails10"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/relativeFourteen"
-                android:layout_below="@+id/relativeThirteen"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole11"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole11"
-                    android:id="@+id/textViewTeacherRoleDetails11"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/relativeFifteen"
-                android:layout_below="@+id/relativeFourteen"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole12"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole12"
-                    android:id="@+id/textViewTeacherRoleDetails12"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/relativeSixteen"
-                android:layout_below="@+id/relativeFifteen"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole13"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole13"
-                    android:id="@+id/textViewTeacherRoleDetails13"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/relativeSeventeen"
-                android:layout_below="@+id/relativeSixteen"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole14"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole14"
-                    android:id="@+id/textViewTeacherRoleDetails14"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/relativeEighteen"
-                android:layout_below="@+id/relativeSeventeen"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_weight="0.7"
-                    android:id="@+id/textViewTeacherRole15"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text=""
-                    android:textColor="#ffffffff"
-                    android:layout_toRightOf="@+id/textViewTeacherRole15"
-                    android:id="@+id/textViewTeacherRoleDetails15"
-                    />
-            </LinearLayout>
+                    android:text="Medium Text"
+                    android:layout_below="@+id/textViewNameTen"
+                    android:id="@+id/textViewEmailTen"
+                    android:textColor="#ff000000" />
+            </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

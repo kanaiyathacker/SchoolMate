@@ -78,59 +78,59 @@ public class StudentFacultyInfoActivity extends Activity {
                 TextView trd = null;
                 switch (count) {
                     case 1 :
-                          tr = (TextView) findViewById(R.id.textViewTeacherRole1);
-                          trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails1);
+                          tr = (TextView) findViewById(R.id.textViewNameOne);
+                          trd = (TextView) findViewById(R.id.textViewEmailOne);
                         break;
                     case 2 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole2);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails2);
+                        tr = (TextView) findViewById(R.id.textViewNameTwo);
+                        trd = (TextView) findViewById(R.id.textViewEmailTwo);
                         break;
                     case 3 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole3);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails3);
+                        tr = (TextView) findViewById(R.id.textViewNameThree);
+                        trd = (TextView) findViewById(R.id.textViewEmailThree);
                         break;
                     case 4 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole4);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails4);
+                        tr = (TextView) findViewById(R.id.textViewNameFour);
+                        trd = (TextView) findViewById(R.id.textViewEmailFour);
                         break;
                     case 5 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole5);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails6);
+                        tr = (TextView) findViewById(R.id.textViewNameFive);
+                        trd = (TextView) findViewById(R.id.textViewEmailFive);
                         break;
                     case 6 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole6);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails6);
+                        tr = (TextView) findViewById(R.id.textViewNameSix);
+                        trd = (TextView) findViewById(R.id.textViewEmailSix);
                         break;
                     case 7 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole7);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails7);
+                        tr = (TextView) findViewById(R.id.textViewNameSeven);
+                        trd = (TextView) findViewById(R.id.textViewEmailSeven);
                         break;
                     case 8 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole8);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails8);
+                        tr = (TextView) findViewById(R.id.textViewNameEight);
+                        trd = (TextView) findViewById(R.id.textViewEmailEight);
                         break;
                     case 9 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole9);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails9);
+                        tr = (TextView) findViewById(R.id.textViewNameNine);
+                        trd = (TextView) findViewById(R.id.textViewEmailNine);
                         break;
                     case 10 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole10);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails10);
+                        tr = (TextView) findViewById(R.id.textViewNameTen);
+                        trd = (TextView) findViewById(R.id.textViewEmailTen);
                         break;
-                    case 11 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole11);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails11);
-                        break;
-                    case 12 :
-                        tr = (TextView) findViewById(R.id.textViewTeacherRole12);
-                        trd = (TextView) findViewById(R.id.textViewTeacherRoleDetails12);
-                        break;
+//                    case 11 :
+//                        tr = (TextView) findViewById(R.id.textViewNameOne);
+//                        trd = (TextView) findViewById(R.id.textViewEmailOne);
+//                        break;
+//                    case 12 :
+//                        tr = (TextView) findViewById(R.id.textViewNameOne);
+//                        trd = (TextView) findViewById(R.id.textViewEmailOne);
+//                        break;
                     default:
                         break;
                 }
                 if(tr != null && trd != null) {
-                    tr.setText(map.get("teacherRole").toString());
-                    trd.setText(map.get("teacherName").toString() + "\n" + map.get("teacherEmail").toString());
+                    tr.setText(map.get("teacherName").toString() + " ( " +map.get("teacherRole").toString() + " ) ");
+                    trd.setText("Email : " + map.get("teacherEmail").toString());
                 }
                 count++;
             }
