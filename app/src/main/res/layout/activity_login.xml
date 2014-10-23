@@ -28,7 +28,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
                         android:id="@+id/imageView"
-                        android:src="@drawable/student_admission" />
+                        android:src="@drawable/student_admission_1" />
 
                     <TextView
                         android:layout_width="wrap_content"
