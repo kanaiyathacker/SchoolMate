@@ -20,7 +20,7 @@
             android:id="@+id/imageView"
             android:layout_gravity="left"
             android:baselineAlignBottom="false"
-            android:src="@drawable/contact_us" />
+            android:src="@drawable/announcement_128" />
 
         <ScrollView
             android:id="@+id/SCROLLER_ID"

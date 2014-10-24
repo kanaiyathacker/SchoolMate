@@ -148,26 +148,26 @@ public class DailyTimeTableActivity extends Activity implements WeekView.MonthCh
         List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
         int count = 1;
 
-        for(Object currVal :timetableList) {
-            Map map = (Map)currVal;
-            String ttStart = map.get("startTime").toString();
-            String ttEnd = map.get("endTime").toString();
-
-            for(int i =0; i <= 7*4;i=i+7) {
+        for(int i =0; i <=4;i++) {
+            for(Object currVal : timetableList) {
+                Map map = (Map)currVal;
+                String ttStart = map.get("startTime").toString();
+                String ttEnd = map.get("endTime").toString();
                 Calendar startTime = Calendar.getInstance();
-                startTime.set(Calendar.DAY_OF_WEEK, getDay(map.get("day").toString()));
-                startTime.set(Calendar.DATE , startTime.get(Calendar.DATE) + i);
+                int day = getDay(map.get("day").toString());
+                startTime.set(Calendar.DAY_OF_WEEK, day);
+                startTime.set(Calendar.DATE, startTime.get(Calendar.DATE) + i == 0 ? 0 : 7 );
                 startTime.set(Calendar.HOUR_OF_DAY, Integer.parseInt(ttStart.split(":")[0]));
                 startTime.set(Calendar.MINUTE, Integer.parseInt(ttStart.split(":")[1]) + 1);
-                startTime.set(Calendar.MONTH, newMonth-1);
+                startTime.set(Calendar.MONTH, newMonth - 1);
                 startTime.set(Calendar.YEAR, newYear);
                 Calendar endTime = (Calendar) startTime.clone();
                 endTime.set(Calendar.HOUR_OF_DAY, Integer.parseInt(ttEnd.split(":")[0]));
                 endTime.set(Calendar.MINUTE, Integer.parseInt(ttEnd.split(":")[1]));
-                endTime.set(Calendar.MONTH, newMonth-1);
                 WeekViewEvent event = new WeekViewEvent(1, map.get("subName").toString() + " ( " + ttStart + " - " + ttEnd + " ) " + "\n" + map.get("profName").toString(), startTime, endTime);
                 event.setColor(getResources().getColor(R.color.event_color_02));
                 events.add(event);
+                System.out.println(startTime.get(Calendar.DATE) + "/ " + startTime.get(Calendar.MONTH));
             }
         }
         return events;
@@ -181,6 +181,6 @@ public class DailyTimeTableActivity extends Activity implements WeekView.MonthCh
         if("FRIDAY".equalsIgnoreCase(day)) return Calendar.FRIDAY;
         if("SATURDAY".equalsIgnoreCase(day)) return Calendar.SATURDAY;
         if("SUNDAY".equalsIgnoreCase(day)) return Calendar.SUNDAY;
-        return 0;
+        return -1;
     }
 }

@@ -37,5 +37,6 @@
     <string name="title_activity_daily_time_table">DailyTimeTableActivity</string>
     <string name="title_activity_student_attendance">StudentAttendanceActivity</string>
     <string name="title_activity_student_faculty_info">StudentFacultyInfoActivity</string>
+    <string name="title_activity_results">ResultsActivity</string>
 
 </resources>
