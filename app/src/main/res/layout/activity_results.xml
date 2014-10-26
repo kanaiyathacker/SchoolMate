@@ -73,6 +73,7 @@
         android:background="#ffbfbfbf"
         android:layout_marginTop="10dp"
         android:padding="10dp"
+        android:onClick="onClickFirstTerm"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -85,10 +86,10 @@
             android:layout_below="@+id/textViewTerm1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/textViewTerm1Value"
+            android:textColor="#ff830101"
             />
     </RelativeLayout>
     <RelativeLayout
@@ -99,7 +100,7 @@
         android:background="#ffbfbfbf"
         android:layout_marginTop="10dp"
         android:padding="10dp"
-
+        android:onClick="onClickFirstTerm"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -112,10 +113,11 @@
             android:layout_below="@+id/textViewTerm2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/textViewTerm2Value"
+            android:textColor="#ff830101"
+
             />
     </RelativeLayout>
     <RelativeLayout
@@ -126,7 +128,7 @@
         android:background="#ffbfbfbf"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-
+        android:onClick="onClickFirstTerm"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -139,10 +141,10 @@
             android:layout_below="@+id/textViewTerm3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/textViewTerm3Value"
+            android:textColor="#ff830101"
             />
     </RelativeLayout>
     <RelativeLayout
@@ -153,14 +155,15 @@
         android:background="#ffbfbfbf"
         android:layout_marginTop="10dp"
         android:padding="10dp"
-
+        android:onClick="onClickFirstTerm"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Term 1:"
+            android:text="Class Test/Internals"
             android:id="@+id/textViewClassTest"
+            android:textColor="#ff830101"
             />
     </RelativeLayout>
 </RelativeLayout>

@@ -92,7 +92,7 @@ public class LoginActivity extends Activity {
         student.setSection("a");
         student.setRollNo("1");
         student.setSchoolId("101");
-        student.setId("101X1X10XAX2014s");
+        student.setId("101X1X10XAX2014");
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("STUDENT_INFO" , new Gson().toJson(student)).commit();

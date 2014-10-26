@@ -25,6 +25,7 @@ public class ResultsService extends RetrofitSpiceRequest<List , RestServiceInter
 
     @Override
     public List loadDataFromNetwork() throws Exception {
+        System.out.println(studentID + schoolID + className + section);
         return (List) getService().getStudentResults(studentID, schoolID, className, section);
     }
 }

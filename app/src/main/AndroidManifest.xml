@@ -100,6 +100,14 @@
             android:name="com.vaiotech.schoolmate.ResultsActivity"
             android:label="@string/title_activity_results" >
         </activity>
+        <activity
+            android:name="com.vaiotech.schoolmate.ResultDetailsActivity"
+            android:label="@string/title_activity_result_details" >
+        </activity>
+        <activity
+            android:name="com.vaiotech.schoolmate.SubjectResultActivity"
+            android:label="@string/title_activity_subject_result" >
+        </activity>
     </application>
 
 </manifest>

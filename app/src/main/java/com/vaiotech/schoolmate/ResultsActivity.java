@@ -2,10 +2,14 @@ package com.vaiotech.schoolmate;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -18,6 +22,7 @@ import com.vaiotech.services.RestService;
 import com.vaiotech.services.ResultsService;
 
 import java.util.List;
+import java.util.Map;
 
 public class ResultsActivity extends Activity {
 
@@ -57,6 +62,12 @@ public class ResultsActivity extends Activity {
         spiceManager.execute(resultsService , new RestServiceListener());
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        spiceManager.shouldStop();
+    }
+
     private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<List> {
 
         @Override
@@ -67,6 +78,21 @@ public class ResultsActivity extends Activity {
         @Override
         public void onRequestSuccess(List result) {
             System.out.println(result);
+            for(Object currVal :result) {
+                Map map = (Map) currVal;
+                System.out.println("map..." + map);
+                String type = (String) map.get("type");
+                if(type.equals("AT1")) {
+                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm1Value);
+                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
+                } else if(type.equals("AT2")) {
+                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm2Value);
+                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
+                }else if(type.equals("AT3")) {
+                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm3Value);
+                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
+                }
+            }
         }
     }
 
@@ -87,5 +113,21 @@ public class ResultsActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickFirstTerm(View view) {
+        RelativeLayout lo = (RelativeLayout)view;
+        Intent intent = new Intent(this ,ResultDetailsActivity.class);
+
+        if(lo.getId() == R.id.relativeTerm1) {
+            intent.putExtra("TYPE" , "Term 1");
+        } else if(lo.getId() == R.id.relativeTerm2) {
+            intent.putExtra("TYPE" , "Term 2");
+        } else if(lo.getId() == R.id.relativeTerm3) {
+            intent.putExtra("TYPE" , "Term 3");
+        } else if(lo.getId() == R.id.relativeClassTest) {
+            intent.putExtra("TYPE" , "Class");
+        }
+        startActivity(intent);
     }
 }
