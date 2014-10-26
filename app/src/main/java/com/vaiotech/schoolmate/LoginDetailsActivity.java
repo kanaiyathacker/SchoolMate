@@ -156,6 +156,11 @@ public class LoginDetailsActivity extends Activity {
                 startActivity(intent);
                 break;
 
+            case R.id.results:
+                intent = new Intent(this ,ResultsActivity.class);
+                startActivity(intent);
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }

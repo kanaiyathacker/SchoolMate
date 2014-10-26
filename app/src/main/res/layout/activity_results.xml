@@ -8,7 +8,30 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.vaiotech.schoolmate.ResultsActivity">
 
+    <RelativeLayout
+        android:id="@+id/relativeStudentSection"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Name:"
+            android:id="@+id/textViewStudentName"
+            />
+        <TextView
+            android:layout_toRightOf="@+id/textViewStudentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textViewStudentNameValue"
+            />
+    </RelativeLayout>
     <LinearLayout
+        android:layout_below="@+id/relativeStudentSection"
         android:id="@+id/relativeSec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,5 +65,102 @@
             android:id="@+id/textViewStudentRollNoValue"
             />
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/relativeTerm1"
+        android:layout_below="@+id/relativeSec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffbfbfbf"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Term 1:"
+            android:id="@+id/textViewTerm1"
+            />
+        <TextView
+            android:layout_below="@+id/textViewTerm1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textViewTerm1Value"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeTerm2"
+        android:layout_below="@+id/relativeTerm1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffbfbfbf"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
 
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Term 2:"
+            android:id="@+id/textViewTerm2"
+            />
+        <TextView
+            android:layout_below="@+id/textViewTerm2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textViewTerm2Value"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeTerm3"
+        android:layout_below="@+id/relativeTerm2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffbfbfbf"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Term 3:"
+            android:id="@+id/textViewTerm3"
+            />
+        <TextView
+            android:layout_below="@+id/textViewTerm3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/textViewTerm3Value"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeClassTest"
+        android:layout_below="@+id/relativeTerm3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffbfbfbf"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Term 1:"
+            android:id="@+id/textViewClassTest"
+            />
+    </RelativeLayout>
 </RelativeLayout>

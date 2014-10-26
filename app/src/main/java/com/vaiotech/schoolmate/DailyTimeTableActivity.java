@@ -149,6 +149,7 @@ public class DailyTimeTableActivity extends Activity implements WeekView.MonthCh
         int count = 1;
 
         for(int i =0; i <=4;i++) {
+            int date = i == 0 ? 0 : i * 7;
             for(Object currVal : timetableList) {
                 Map map = (Map)currVal;
                 String ttStart = map.get("startTime").toString();
@@ -156,7 +157,7 @@ public class DailyTimeTableActivity extends Activity implements WeekView.MonthCh
                 Calendar startTime = Calendar.getInstance();
                 int day = getDay(map.get("day").toString());
                 startTime.set(Calendar.DAY_OF_WEEK, day);
-                startTime.set(Calendar.DATE, startTime.get(Calendar.DATE) + i == 0 ? 0 : 7 );
+                startTime.set(Calendar.DATE, startTime.get(Calendar.DATE) + date );
                 startTime.set(Calendar.HOUR_OF_DAY, Integer.parseInt(ttStart.split(":")[0]));
                 startTime.set(Calendar.MINUTE, Integer.parseInt(ttStart.split(":")[1]) + 1);
                 startTime.set(Calendar.MONTH, newMonth - 1);

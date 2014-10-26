@@ -27,4 +27,9 @@ public interface RestServiceInterface {
 
     @GET("/schoolMate/facultyInfo/{schoolID}/{className}/{section}")
     Object getFacultyInfo(@Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section);
+
+    @GET("/myschool/aggregateTermResults/{studentID}/{schoolID}/{className}/{section}")
+    Object getStudentResults(@Path("studentID") String studentID , @Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section);
+
+
 }

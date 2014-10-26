@@ -47,4 +47,8 @@
         android:orderInCategory="111"
         android:title="Student Faculty Info" />
 
+    <item android:id="@+id/results"
+        android:orderInCategory="112"
+        android:title="Results" />
+
 </menu>
