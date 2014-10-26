@@ -78,7 +78,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:gravity="center"
-            android:textColor="#ff830101"
+            android:textColor="#C00000"
             android:id="@+id/textViewTermHeader"
             android:padding="5dp"
             />
@@ -101,8 +101,8 @@
                     android:id="@+id/innerRelativeOne"
                     android:layout_below="@+id/relativeOne"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -111,7 +111,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -136,7 +135,6 @@
                         android:layout_toRightOf="@+id/innerComRelativeOneLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
 
@@ -147,7 +145,7 @@
                         android:id="@+id/buttonOne"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentBottom="true" />
@@ -158,8 +156,8 @@
                     android:id="@+id/innerRelativeTwo"
                     android:layout_below="@+id/innerRelativeOne"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -168,7 +166,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -193,7 +190,6 @@
                         android:layout_toRightOf="@+id/innerComRelativeTwoLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
 
                         >
@@ -206,7 +202,7 @@
                         android:id="@+id/buttonTwo"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -216,8 +212,8 @@
                     android:id="@+id/innerRelativeThree"
                     android:layout_below="@+id/innerRelativeTwo"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -226,7 +222,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -251,7 +246,6 @@
                         android:layout_toRightOf="@+id/innerComRelativeThreeLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
 
                         >
@@ -264,7 +258,7 @@
                         android:id="@+id/buttonThree"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -274,8 +268,8 @@
                     android:id="@+id/innerRelativeFour"
                     android:layout_below="@+id/innerRelativeThree"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -284,7 +278,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -309,11 +302,8 @@
                         android:layout_toRightOf="@+id/innerComRelativeFourLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
-
                         >
-
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -322,7 +312,7 @@
                         android:id="@+id/buttonFour"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -332,8 +322,8 @@
                     android:id="@+id/innerRelativeFive"
                     android:layout_below="@+id/innerRelativeFour"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="70dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -342,7 +332,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -367,9 +356,7 @@
                         android:layout_toRightOf="@+id/innerComRelativeFiveLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
-
                         >
 
                     <Button
@@ -380,7 +367,7 @@
                         android:id="@+id/buttonFive"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -390,8 +377,8 @@
                     android:id="@+id/innerRelativeSix"
                     android:layout_below="@+id/innerRelativeFive"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -425,9 +412,7 @@
                         android:layout_toRightOf="@+id/innerComRelativeSixLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
-
                         >
 
                     <Button
@@ -438,7 +423,7 @@
                         android:id="@+id/buttonSix"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -448,8 +433,8 @@
                     android:id="@+id/innerRelativeSeven"
                     android:layout_below="@+id/innerRelativeSix"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -458,7 +443,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -483,7 +467,6 @@
                         android:layout_toRightOf="@+id/innerComRelativeSevenLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
 
                         >
@@ -496,7 +479,7 @@
                         android:id="@+id/buttonSeven"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -506,8 +489,8 @@
                     android:id="@+id/innerRelativeEight"
                     android:layout_below="@+id/innerRelativeSeven"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -516,7 +499,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -541,9 +523,7 @@
                         android:layout_toRightOf="@+id/innerComRelativeEightLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
-
                         >
 
                     <Button
@@ -554,7 +534,7 @@
                         android:id="@+id/buttonEight"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -564,8 +544,8 @@
                     android:id="@+id/innerRelativeNine"
                     android:layout_below="@+id/innerRelativeEight"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -574,7 +554,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -599,9 +578,7 @@
                         android:layout_toRightOf="@+id/innerComRelativeNineLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
-
                         >
 
                     <Button
@@ -612,7 +589,7 @@
                         android:id="@+id/buttonNine"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -622,8 +599,8 @@
                     android:id="@+id/innerRelativeTen"
                     android:layout_below="@+id/innerRelativeNine"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -632,7 +609,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -659,7 +635,6 @@
                         android:layout_height="match_parent"
                         android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
-
                         >
 
                     <Button
@@ -670,7 +645,7 @@
                         android:id="@+id/buttonTen"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -680,8 +655,8 @@
                     android:id="@+id/innerRelativeEleven"
                     android:layout_below="@+id/innerRelativeTen"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -690,7 +665,6 @@
                         android:layout_below="@+id/relativeOne"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
                         >
                         <TextView
@@ -715,9 +689,7 @@
                         android:layout_toRightOf="@+id/innerComRelativeElevenLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
-
                         >
 
                     <Button
@@ -728,7 +700,7 @@
                         android:id="@+id/buttonEleven"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -738,8 +710,8 @@
                     android:id="@+id/innerRelativeTwelve"
                     android:layout_below="@+id/innerRelativeEleven"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -773,9 +745,7 @@
                         android:layout_toRightOf="@+id/innerComRelativeTwelveLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
-
                         >
 
                     <Button
@@ -786,7 +756,7 @@
                         android:id="@+id/buttonTwelve"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>
@@ -795,8 +765,8 @@
                     android:id="@+id/innerRelativeThirteen"
                     android:layout_below="@+id/innerRelativeTwelve"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffbfbfbf"
+                    android:layout_height="60dp"
+                    android:background="@drawable/grey"
                     android:layout_margin="5dp"
                     >
 
@@ -830,7 +800,6 @@
                         android:layout_toRightOf="@+id/innerComRelativeThirteenLeft"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffbfbfbf"
                         android:layout_margin="5dp"
 
                         >
@@ -843,7 +812,7 @@
                         android:id="@+id/buttonThirteen"
                         android:textColor="#ffffffff"
                         android:layout_alignParentRight="true"
-                        android:background="#ff830101"
+                        android:background="#C00000"
                         android:padding="10dp"
                         android:layout_alignParentEnd="true" />
                     </RelativeLayout>

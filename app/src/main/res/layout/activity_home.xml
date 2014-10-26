@@ -45,7 +45,7 @@
         android:layout_below="@+id/schoolSpinner"
         android:onClick="next"
         android:textColor="#ffffffff"
-        android:background="#ff830101" />
+        android:background="#C00000" />
 
 
 </RelativeLayout>

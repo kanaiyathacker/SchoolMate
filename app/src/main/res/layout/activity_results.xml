@@ -69,8 +69,8 @@
         android:id="@+id/relativeTerm1"
         android:layout_below="@+id/relativeSec"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffbfbfbf"
+        android:layout_height="70dp"
+        android:background="@drawable/grey"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:onClick="onClickFirstTerm"
@@ -89,15 +89,15 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/textViewTerm1Value"
-            android:textColor="#ff830101"
+            android:textColor="#C00000"
             />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/relativeTerm2"
         android:layout_below="@+id/relativeTerm1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffbfbfbf"
+        android:layout_height="70dp"
+        android:background="@drawable/grey"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:onClick="onClickFirstTerm"
@@ -116,7 +116,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/textViewTerm2Value"
-            android:textColor="#ff830101"
+            android:textColor="#C00000"
 
             />
     </RelativeLayout>
@@ -124,8 +124,8 @@
         android:id="@+id/relativeTerm3"
         android:layout_below="@+id/relativeTerm2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffbfbfbf"
+        android:layout_height="70dp"
+        android:background="@drawable/grey"
         android:padding="10dp"
         android:layout_marginTop="10dp"
         android:onClick="onClickFirstTerm"
@@ -144,15 +144,15 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/textViewTerm3Value"
-            android:textColor="#ff830101"
+            android:textColor="#C00000"
             />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/relativeClassTest"
         android:layout_below="@+id/relativeTerm3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffbfbfbf"
+        android:layout_height="70dp"
+        android:background="@drawable/grey"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:onClick="onClickFirstTerm"
@@ -163,7 +163,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Class Test/Internals"
             android:id="@+id/textViewClassTest"
-            android:textColor="#ff830101"
+            android:textColor="#C00000"
             />
     </RelativeLayout>
 </RelativeLayout>
