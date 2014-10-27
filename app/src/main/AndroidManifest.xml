@@ -108,6 +108,7 @@
             android:name="com.vaiotech.schoolmate.SubjectResultActivity"
             android:label="@string/title_activity_subject_result" >
         </activity>
+        <activity android:name="org.achartengine.GraphicalActivity"/>
     </application>
 
 </manifest>
