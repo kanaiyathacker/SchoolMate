@@ -31,5 +31,7 @@ public interface RestServiceInterface {
     @GET("/myschool/aggregateTermResults/{studentID}/{schoolID}/{className}/{section}")
     Object getStudentResults(@Path("studentID") String studentID , @Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section);
 
+    @GET("/myschool/termResult/{studentID}/{schoolID}/{className}/{section}/{term}")
+    Object getStudentTermResult(@Path("studentID") String studentID , @Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section , @Path("term") String term);
 
 }
