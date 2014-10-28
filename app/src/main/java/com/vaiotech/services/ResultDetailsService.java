@@ -4,9 +4,6 @@ import com.octo.android.robospice.request.retrofit.RetrofitSpiceRequest;
 
 import java.util.List;
 
-/**
- * Created by kanaiyathacker on 27/10/2014.
- */
 public class ResultDetailsService extends RetrofitSpiceRequest<List , RestServiceInterface> {
 
     String schoolID;

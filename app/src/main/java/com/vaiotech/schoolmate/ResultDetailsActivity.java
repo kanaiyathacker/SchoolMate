@@ -2,6 +2,7 @@ package com.vaiotech.schoolmate;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -50,12 +51,12 @@ public class ResultDetailsActivity extends Activity {
 
         resultDetailsService = new ResultDetailsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() , "T1");
         context = this;
-
-
         String type = getIntent().getStringExtra("TYPE");
         System.out.println("Type... "  + type);
-        TextView  textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
+        TextView textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
         textViewTermHeader.setText(type);
+
+        context = this;
     }
 
     @Override
@@ -177,5 +178,10 @@ public class ResultDetailsActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick(View view) {
+        Intent intent = new Intent(this , SubjectResultActivity.class);
+        startActivity(intent);
     }
 }
