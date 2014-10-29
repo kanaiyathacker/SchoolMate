@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by kanaiyathacker on 28/10/2014.
  */
-public class ResultSubjectService  extends RetrofitSpiceRequest<List , RestServiceInterface> {
+public class ResultSubjectService  extends RetrofitSpiceRequest<String , RestServiceInterface> {
 
     String schoolID;
     String studentID;
@@ -18,7 +18,7 @@ public class ResultSubjectService  extends RetrofitSpiceRequest<List , RestServi
 
     public ResultSubjectService(String studentID ,  String schoolID
             ,  String className , String section , String term , String sub) {
-        super(List.class, RestServiceInterface.class);
+        super(String.class, RestServiceInterface.class);
         this.schoolID = schoolID;
         this.studentID = studentID;
         this.section = section;
@@ -28,8 +28,8 @@ public class ResultSubjectService  extends RetrofitSpiceRequest<List , RestServi
     }
 
     @Override
-    public List loadDataFromNetwork() throws Exception {
+    public String loadDataFromNetwork() throws Exception {
         System.out.println(studentID + schoolID + className + section + term + sub);
-        return (List) getService().getStudentScoreResult(studentID, schoolID, className, section,term , sub);
+        return (String)getService().getStudentScoreResult(studentID, schoolID, className, section,term , sub);
     }
 }

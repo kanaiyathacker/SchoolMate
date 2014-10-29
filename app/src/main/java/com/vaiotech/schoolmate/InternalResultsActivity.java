@@ -79,7 +79,8 @@ public class InternalResultsActivity extends Activity {
             List<Item> list = new ArrayList<Item>();
             for(Object currVal :result) {
                 Map map = (Map) currVal;
-                Item item = new Item(""+map.get("subject") , "Your score :" + map.get("scored") + "/" + map.get("total"));
+                Item item = new Item(""+map.get("subject") , "Your score :" + map.get("scored") + "/" + map.get("total")
+                , ""+map.get("date") );
                 list.add(item);
             }
             ItemAdapter adapter = new ItemAdapter(context , R.layout.list_item , list);

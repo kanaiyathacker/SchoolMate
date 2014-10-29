@@ -30,6 +30,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
     private class ViewHolder {
         TextView txtTitle;
         TextView txtDesc;
+        TextView txtDate;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -43,13 +44,14 @@ public class ItemAdapter extends ArrayAdapter<Item> {
             holder = new ViewHolder();
             holder.txtDesc = (TextView) convertView.findViewById(R.id.desc);
             holder.txtTitle = (TextView) convertView.findViewById(R.id.title);
+            holder.txtDate = (TextView) convertView.findViewById(R.id.date);
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();
 
         holder.txtDesc.setText(rowItem.getDescription());
         holder.txtTitle.setText(rowItem.getTitle());
-
+        holder.txtDate.setText(rowItem.getDate());
         return convertView;
     }
 }

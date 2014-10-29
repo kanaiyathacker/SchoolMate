@@ -170,7 +170,7 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
     }
 
 
-    private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<List> {
+    private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<String> {
 
         @Override
         public void onRequestFailure(SpiceException spiceException) {
@@ -178,7 +178,7 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
         }
 
         @Override
-        public void onRequestSuccess(List result) {
+        public void onRequestSuccess(String result) {
             System.out.println(result);
         }
     }
