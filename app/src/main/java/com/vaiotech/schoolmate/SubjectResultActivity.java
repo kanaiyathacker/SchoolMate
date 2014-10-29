@@ -64,11 +64,20 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
         TextView  textViewStudentNameValue = (TextView)findViewById(R.id.textViewStudentNameValue);
         textViewStudentNameValue.setText(studentInfo.getfName());
 
+        TextView  textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
+        textViewTermHeader.setText(studentInfo.getfName());
+
+
+
+
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
         String subject = getIntent().getStringExtra("SUB");
         String type = getIntent().getStringExtra("TYPE");
-        System.out.println("Subject.... " + subject);
+        if("T1".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 1" + subject);
+        if("T2".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 2" + subject);
+        if("T3".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 3" + subject);
+        if("CLASS".equalsIgnoreCase(type)) textViewTermHeader.setText("Class");
         resultSubjectService = new ResultSubjectService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() ,type, subject);
         context = this;
 //

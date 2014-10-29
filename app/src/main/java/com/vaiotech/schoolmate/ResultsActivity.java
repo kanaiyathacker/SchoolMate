@@ -117,17 +117,22 @@ public class ResultsActivity extends Activity {
 
     public void onClickFirstTerm(View view) {
         RelativeLayout lo = (RelativeLayout)view;
-        Intent intent = new Intent(this ,ResultDetailsActivity.class);
+        Intent intent = null;
 
         if(lo.getId() == R.id.relativeTerm1) {
+            intent = new Intent(this ,ResultDetailsActivity.class);
             intent.putExtra("TYPE" , "T1");
         } else if(lo.getId() == R.id.relativeTerm2) {
+            intent = new Intent(this ,ResultDetailsActivity.class);
             intent.putExtra("TYPE" , "T2");
         } else if(lo.getId() == R.id.relativeTerm3) {
+            intent = new Intent(this ,ResultDetailsActivity.class);
             intent.putExtra("TYPE" , "T3");
         } else if(lo.getId() == R.id.relativeClassTest) {
+            intent = new Intent(this ,InternalResultsActivity.class);
             intent.putExtra("TYPE" , "Class");
         }
+
         startActivity(intent);
     }
 }
