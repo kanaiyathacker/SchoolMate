@@ -21,6 +21,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.interfaces.OnChartValueSelectedListener;
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.vaiotech.Utility.BarGraph;
@@ -39,6 +40,10 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
     private ResultSubjectService resultSubjectService;
     private Context context;
     public static final String PREFS_NAME = "MyPrefsFile";
+    private TextView textViewYSVal;
+    private TextView textViewHSVal;
+    private TextView textViewCAVal;
+    private TextView textViewLSVal;
 
     private BarChart mChart;
     private SeekBar mSeekBarX, mSeekBarY;
@@ -68,6 +73,11 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
         textViewTermHeader.setText(studentInfo.getfName());
 
 
+
+         textViewYSVal = (TextView)findViewById(R.id.textViewYSVal);
+         textViewHSVal = (TextView)findViewById(R.id.textViewHSVal);
+         textViewCAVal = (TextView)findViewById(R.id.textViewCAVal);
+         textViewLSVal = (TextView)findViewById(R.id.textViewLSVal);
 
 
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
@@ -170,7 +180,7 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
     }
 
 
-    private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<String> {
+    private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<Object> {
 
         @Override
         public void onRequestFailure(SpiceException spiceException) {
@@ -178,8 +188,17 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
         }
 
         @Override
-        public void onRequestSuccess(String result) {
-            System.out.println(result);
+        public void onRequestSuccess(Object result) {
+            LinkedTreeMap map = (LinkedTreeMap)result;
+            System.out.println(map.get("yScore"));
+            System.out.println(map.get("hScore"));
+            System.out.println(map.get("avg"));
+            System.out.println(map.get("lScore"));
+
+            textViewYSVal.setText(""+map.get("yScore"));
+            textViewHSVal.setText(""+map.get("hScore"));
+            textViewCAVal.setText(""+map.get("avg"));
+            textViewLSVal.setText(""+map.get("lScore"));
         }
     }
 
