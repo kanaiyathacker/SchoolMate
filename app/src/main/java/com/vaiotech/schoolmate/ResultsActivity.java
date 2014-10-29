@@ -130,9 +130,8 @@ public class ResultsActivity extends Activity {
             intent.putExtra("TYPE" , "T3");
         } else if(lo.getId() == R.id.relativeClassTest) {
             intent = new Intent(this ,InternalResultsActivity.class);
-            intent.putExtra("TYPE" , "Class");
+            intent.putExtra("TYPE" , "CT");
         }
-
         startActivity(intent);
     }
 }

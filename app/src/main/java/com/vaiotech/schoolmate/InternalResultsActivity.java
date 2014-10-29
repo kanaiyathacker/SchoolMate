@@ -6,21 +6,31 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.octo.android.robospice.SpiceManager;
+import com.octo.android.robospice.persistence.exception.SpiceException;
+import com.vaiotech.bean.Item;
+import com.vaiotech.bean.ItemAdapter;
 import com.vaiotech.bean.Student;
 import com.vaiotech.myschool.R;
+import com.vaiotech.services.InternalResultsService;
 import com.vaiotech.services.RestService;
 import com.vaiotech.services.ResultsService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class InternalResultsActivity extends Activity {
 
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
-    private ResultsService resultsService;
+    private InternalResultsService internalResultsService;
     private Context context;
     public static final String PREFS_NAME = "MyPrefsFile";
+    public ListView listView ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +51,46 @@ public class InternalResultsActivity extends Activity {
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
 
+        String type = getIntent().getStringExtra("TYPE");
+        internalResultsService = new InternalResultsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() , type);
+        context = this;
+
+        listView = (ListView)findViewById(R.id.listView);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        spiceManager.start(this);
+        spiceManager.execute(internalResultsService , new RestServiceListener());
+    }
+
+    private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<List> {
+
+        @Override
+        public void onRequestFailure(SpiceException spiceException) {
+
+        }
+
+        @Override
+        public void onRequestSuccess(List result) {
+            System.out.println(result);
+            int count =1;
+            List<Item> list = new ArrayList<Item>();
+            for(Object currVal :result) {
+                Map map = (Map) currVal;
+                Item item = new Item(""+map.get("subject") , "Your score :" + map.get("scored") + "/" + map.get("total"));
+                list.add(item);
+            }
+            ItemAdapter adapter = new ItemAdapter(context , R.layout.list_item , list);
+            listView.setAdapter(adapter);
+        }
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        spiceManager.shouldStop();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

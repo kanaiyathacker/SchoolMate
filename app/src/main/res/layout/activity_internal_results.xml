@@ -76,7 +76,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text=""
+            android:text="Internals"
             android:gravity="center"
             android:textColor="#C00000"
             android:id="@+id/textViewTermHeader"

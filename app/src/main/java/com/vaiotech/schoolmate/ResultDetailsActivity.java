@@ -55,17 +55,18 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
 
-        resultDetailsService = new ResultDetailsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() , "T1");
+        type = getIntent().getStringExtra("TYPE");
+
+        resultDetailsService = new ResultDetailsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() , type);
         context = this;
 
 
-        type = getIntent().getStringExtra("TYPE");
         System.out.println("Type... "  + type);
         TextView  textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
         if("T1".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 1");
         if("T2".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 2");
         if("T3".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 3");
-        if("CLASS".equalsIgnoreCase(type)) textViewTermHeader.setText("Class");
+        if("CT".equalsIgnoreCase(type)) textViewTermHeader.setText("Class");
 
         listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
