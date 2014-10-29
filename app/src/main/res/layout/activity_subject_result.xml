@@ -75,7 +75,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Scoreqqqqqqqqqq"
+            android:text="Your Score"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:gravity="center"
             android:id="@+id/textViewTermHeader"
@@ -89,18 +89,21 @@
         >
 
     <RadioGroup
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Data View"
             android:id="@+id/radioButtonDV" />
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Graph View"
             android:id="@+id/radioButtonGV" />
@@ -121,6 +124,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -128,10 +132,11 @@
                 android:id="@+id/textViewYSLable"
             />
             <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text=":80/100"
+                android:text=""
                 android:id="@+id/textViewYSVal"
                 />
         </LinearLayout>
@@ -143,17 +148,19 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Your Score"
+                android:text="Highest Score"
                 android:id="@+id/textViewHSLable"
                 />
             <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text=":80/100"
+                android:text=""
                 android:id="@+id/textViewHSVal"
                 />
         </LinearLayout>
@@ -165,17 +172,19 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Your Score"
+                android:text="Class Average"
                 android:id="@+id/textViewCALable"
                 />
             <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text=":80/100"
+                android:text=""
                 android:id="@+id/textViewCAVal"
                 />
         </LinearLayout>
@@ -187,17 +196,19 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Your Score"
+                android:text="Lowest Score"
                 android:id="@+id/textViewLSLable"
                 />
             <TextView
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="80/100"
+                android:text=""
                 android:id="@+id/textViewLSVal"
                 />
         </LinearLayout>

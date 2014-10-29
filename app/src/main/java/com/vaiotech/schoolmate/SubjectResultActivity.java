@@ -84,9 +84,9 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
         String subject = getIntent().getStringExtra("SUB");
         String type = getIntent().getStringExtra("TYPE");
-        if("T1".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 1" + subject);
-        if("T2".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 2" + subject);
-        if("T3".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 3" + subject);
+        if("T1".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 1 : " + subject);
+        if("T2".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 2 : " + subject);
+        if("T3".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 3 : " + subject);
         if("CLASS".equalsIgnoreCase(type)) textViewTermHeader.setText("Class");
         resultSubjectService = new ResultSubjectService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() ,type, subject);
         context = this;
@@ -195,10 +195,10 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
             System.out.println(map.get("avg"));
             System.out.println(map.get("lScore"));
 
-            textViewYSVal.setText(""+map.get("yScore"));
-            textViewHSVal.setText(""+map.get("hScore"));
-            textViewCAVal.setText(""+map.get("avg"));
-            textViewLSVal.setText(""+map.get("lScore"));
+            textViewYSVal.setText(": "+map.get("yScore") + "/100");
+            textViewHSVal.setText(": "+map.get("hScore")+ "/100");
+            textViewCAVal.setText(": "+map.get("avg")+ "/100");
+            textViewLSVal.setText(": "+map.get("lScore")+ "/100");
         }
     }
 
