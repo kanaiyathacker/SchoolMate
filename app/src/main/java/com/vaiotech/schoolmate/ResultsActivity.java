@@ -120,11 +120,11 @@ public class ResultsActivity extends Activity {
         Intent intent = new Intent(this ,ResultDetailsActivity.class);
 
         if(lo.getId() == R.id.relativeTerm1) {
-            intent.putExtra("TYPE" , "Term 1");
+            intent.putExtra("TYPE" , "T1");
         } else if(lo.getId() == R.id.relativeTerm2) {
-            intent.putExtra("TYPE" , "Term 2");
+            intent.putExtra("TYPE" , "T2");
         } else if(lo.getId() == R.id.relativeTerm3) {
-            intent.putExtra("TYPE" , "Term 3");
+            intent.putExtra("TYPE" , "T3");
         } else if(lo.getId() == R.id.relativeClassTest) {
             intent.putExtra("TYPE" , "Class");
         }

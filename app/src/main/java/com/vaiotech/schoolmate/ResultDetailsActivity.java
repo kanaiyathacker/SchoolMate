@@ -34,6 +34,7 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
     public static final String PREFS_NAME = "MyPrefsFile";
     public ListView listView ;
     List<Item> list;
+    private String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +59,14 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
         context = this;
 
 
-        String type = getIntent().getStringExtra("TYPE");
+        type = getIntent().getStringExtra("TYPE");
         System.out.println("Type... "  + type);
         TextView  textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
-        textViewTermHeader.setText(type);
+        if("T1".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 1");
+        if("T2".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 2");
+        if("T3".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 3");
+        if("CLASS".equalsIgnoreCase(type)) textViewTermHeader.setText("Class");
+
         listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
     }
@@ -83,6 +88,7 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intend = new Intent(this , SubjectResultActivity.class);
         intend.putExtra("SUB" , list.get(i).getTitle());
+        intend.putExtra("TYPE" , type);
         startActivity(intend);
     }
 

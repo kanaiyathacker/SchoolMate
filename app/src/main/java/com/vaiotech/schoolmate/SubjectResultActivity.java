@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -21,24 +20,17 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.interfaces.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.Legend;
-import com.github.mikephil.charting.utils.XLabels;
-import com.github.mikephil.charting.utils.YLabels;
 import com.google.gson.Gson;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.vaiotech.Utility.BarGraph;
-import com.vaiotech.bean.Item;
-import com.vaiotech.bean.ItemAdapter;
 import com.vaiotech.bean.Student;
 import com.vaiotech.myschool.R;
 import com.vaiotech.services.RestService;
 import com.vaiotech.services.ResultSubjectService;
-import com.vaiotech.services.ResultsService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class SubjectResultActivity extends Activity  implements View.OnClickListener , SeekBar.OnSeekBarChangeListener,
         OnChartValueSelectedListener {
@@ -74,82 +66,84 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
 
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
-
-        resultSubjectService = new ResultSubjectService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() ,"TERM", "SUB");
+        String subject = getIntent().getStringExtra("SUB");
+        String type = getIntent().getStringExtra("TYPE");
+        System.out.println("Subject.... " + subject);
+        resultSubjectService = new ResultSubjectService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() ,type, subject);
         context = this;
-
-        Button onClick = (Button)findViewById(R.id.button);
-        onClick.setOnClickListener(this);
-
-        getIntent().getStringExtra("SUB");
-
-        tvX = (TextView) findViewById(R.id.tvXMax);
-        tvY = (TextView) findViewById(R.id.tvYMax);
-
-        mSeekBarX = (SeekBar) findViewById(R.id.seekBar1);
-        mSeekBarY = (SeekBar) findViewById(R.id.seekBar2);
 //
-        mChart = (BarChart) findViewById(R.id.chart);
-        mChart.setOnChartValueSelectedListener(this);
-
-        // enable the drawing of values
-        mChart.setDrawYValues(true);
-
-        mChart.setDrawValueAboveBar(true);
-
-        mChart.setDescription("");
-
-        // if more than 60 entries are displayed in the chart, no values will be
-        // drawn
-        mChart.setMaxVisibleValueCount(60);
-
-        // disable 3D
-        mChart.set3DEnabled(true);
-
-        // scaling can now only be done on x- and y-axis separately
-        mChart.setPinchZoom(true);
-
-        // draw shadows for each bar that show the maximum value
-        // mChart.setDrawBarShadow(true);
-
-        mChart.setUnit(" €");
-
-        // mChart.setDrawXLabels(false);
-
-        mChart.setDrawGridBackground(false);
-        mChart.setDrawHorizontalGrid(true);
-        mChart.setDrawVerticalGrid(false);
-        // mChart.setDrawYLabels(false);
-
-        // sets the text size of the values inside the chart
-        mChart.setValueTextSize(10f);
-
-        mChart.setDrawBorder(false);
-        // mChart.setBorderPositions(new BorderPosition[] {BorderPosition.LEFT,
-        // BorderPosition.RIGHT});
-
-        XLabels xl = mChart.getXLabels();
-        xl.setPosition(XLabels.XLabelPosition.BOTTOM);
-        xl.setCenterXLabelText(true);
-
-        YLabels yl = mChart.getYLabels();
-        yl.setLabelCount(8);
-        yl.setPosition(YLabels.YLabelPosition.BOTH_SIDED);
-
-
-        setData(4, 50);
-
-        // setting data
-        mSeekBarY.setProgress(50);
-        mSeekBarX.setProgress(12);
-
-        mSeekBarY.setOnSeekBarChangeListener(this);
-        mSeekBarX.setOnSeekBarChangeListener(this);
-
-        Legend l = mChart.getLegend();
-        l.setPosition(Legend.LegendPosition.BELOW_CHART_LEFT);
-        l.setFormSize(8f);
-        l.setXEntrySpace(4f);
+//        Button onClick = (Button)findViewById(R.id.button);
+//        onClick.setOnClickListener(this);
+//
+//        getIntent().getStringExtra("SUB");
+//
+//        tvX = (TextView) findViewById(R.id.tvXMax);
+//        tvY = (TextView) findViewById(R.id.tvYMax);
+//
+//        mSeekBarX = (SeekBar) findViewById(R.id.seekBar1);
+//        mSeekBarY = (SeekBar) findViewById(R.id.seekBar2);
+////
+//        mChart = (BarChart) findViewById(R.id.chart);
+//        mChart.setOnChartValueSelectedListener(this);
+//
+//        // enable the drawing of values
+//        mChart.setDrawYValues(true);
+//
+//        mChart.setDrawValueAboveBar(true);
+//
+//        mChart.setDescription("");
+//
+//        // if more than 60 entries are displayed in the chart, no values will be
+//        // drawn
+//        mChart.setMaxVisibleValueCount(60);
+//
+//        // disable 3D
+//        mChart.set3DEnabled(true);
+//
+//        // scaling can now only be done on x- and y-axis separately
+//        mChart.setPinchZoom(true);
+//
+//        // draw shadows for each bar that show the maximum value
+//        // mChart.setDrawBarShadow(true);
+//
+//        mChart.setUnit(" €");
+//
+//        // mChart.setDrawXLabels(false);
+//
+//        mChart.setDrawGridBackground(false);
+//        mChart.setDrawHorizontalGrid(true);
+//        mChart.setDrawVerticalGrid(false);
+//        // mChart.setDrawYLabels(false);
+//
+//        // sets the text size of the values inside the chart
+//        mChart.setValueTextSize(10f);
+//
+//        mChart.setDrawBorder(false);
+//        // mChart.setBorderPositions(new BorderPosition[] {BorderPosition.LEFT,
+//        // BorderPosition.RIGHT});
+//
+//        XLabels xl = mChart.getXLabels();
+//        xl.setPosition(XLabels.XLabelPosition.BOTTOM);
+//        xl.setCenterXLabelText(true);
+//
+//        YLabels yl = mChart.getYLabels();
+//        yl.setLabelCount(8);
+//        yl.setPosition(YLabels.YLabelPosition.BOTH_SIDED);
+//
+//
+//        setData(4, 50);
+//
+//        // setting data
+//        mSeekBarY.setProgress(50);
+//        mSeekBarX.setProgress(12);
+//
+//        mSeekBarY.setOnSeekBarChangeListener(this);
+//        mSeekBarX.setOnSeekBarChangeListener(this);
+//
+//        Legend l = mChart.getLegend();
+//        l.setPosition(Legend.LegendPosition.BELOW_CHART_LEFT);
+//        l.setFormSize(8f);
+//        l.setXEntrySpace(4f);
     }
 
 

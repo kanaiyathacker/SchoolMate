@@ -29,7 +29,7 @@ public class ResultSubjectService  extends RetrofitSpiceRequest<List , RestServi
 
     @Override
     public List loadDataFromNetwork() throws Exception {
-        System.out.println(studentID + schoolID + className + section);
+        System.out.println(studentID + schoolID + className + section + term + sub);
         return (List) getService().getStudentScoreResult(studentID, schoolID, className, section,term , sub);
     }
 }
