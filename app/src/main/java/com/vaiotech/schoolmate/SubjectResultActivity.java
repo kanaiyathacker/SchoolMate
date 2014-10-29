@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PointF;
 import android.graphics.RectF;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,19 +26,25 @@ import com.github.mikephil.charting.utils.XLabels;
 import com.github.mikephil.charting.utils.YLabels;
 import com.google.gson.Gson;
 import com.octo.android.robospice.SpiceManager;
+import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.vaiotech.Utility.BarGraph;
+import com.vaiotech.bean.Item;
+import com.vaiotech.bean.ItemAdapter;
 import com.vaiotech.bean.Student;
 import com.vaiotech.myschool.R;
 import com.vaiotech.services.RestService;
+import com.vaiotech.services.ResultSubjectService;
 import com.vaiotech.services.ResultsService;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class SubjectResultActivity extends Activity  implements View.OnClickListener , SeekBar.OnSeekBarChangeListener,
         OnChartValueSelectedListener {
 
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
-    private ResultsService resultsService;
+    private ResultSubjectService resultSubjectService;
     private Context context;
     public static final String PREFS_NAME = "MyPrefsFile";
 
@@ -70,11 +75,13 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
 
-        resultsService = new ResultsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection());
+        resultSubjectService = new ResultSubjectService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() ,"TERM", "SUB");
         context = this;
 
         Button onClick = (Button)findViewById(R.id.button);
         onClick.setOnClickListener(this);
+
+        getIntent().getStringExtra("SUB");
 
         tvX = (TextView) findViewById(R.id.tvXMax);
         tvY = (TextView) findViewById(R.id.tvYMax);
@@ -145,6 +152,33 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
         l.setXEntrySpace(4f);
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        spiceManager.start(this);
+        spiceManager.execute(resultSubjectService, new RestServiceListener());
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        spiceManager.shouldStop();
+    }
+
+
+    private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<List> {
+
+        @Override
+        public void onRequestFailure(SpiceException spiceException) {
+
+        }
+
+        @Override
+        public void onRequestSuccess(List result) {
+            System.out.println(result);
+        }
+    }
 
     @Override
     public void onClick(View v) {

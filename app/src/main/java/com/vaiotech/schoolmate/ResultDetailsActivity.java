@@ -2,17 +2,15 @@ package com.vaiotech.schoolmate;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.octo.android.robospice.SpiceManager;
@@ -23,7 +21,6 @@ import com.vaiotech.bean.Student;
 import com.vaiotech.myschool.R;
 import com.vaiotech.services.RestService;
 import com.vaiotech.services.ResultDetailsService;
-import com.vaiotech.services.ResultsService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,8 +60,8 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
 
         String type = getIntent().getStringExtra("TYPE");
         System.out.println("Type... "  + type);
-//        TextView  textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
-//        textViewTermHeader.setText(type);
+        TextView  textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
+        textViewTermHeader.setText(type);
         listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
     }
@@ -84,12 +81,9 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//        Toast toast = Toast.makeText(getApplicationContext(),
-//                "Item " + (position + 1) + ": " + listView.get(position),
-//                Toast.LENGTH_SHORT);
-//        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
-//        toast.show();
-//    }
+        Intent intend = new Intent(this , SubjectResultActivity.class);
+        intend.putExtra("SUB" , list.get(i).getTitle());
+        startActivity(intend);
     }
 
     private class RestServiceListener implements com.octo.android.robospice.request.listener.RequestListener<List> {

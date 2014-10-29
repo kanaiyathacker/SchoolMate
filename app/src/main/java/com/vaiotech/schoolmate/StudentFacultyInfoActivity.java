@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,21 +18,26 @@ import com.google.gson.internal.LinkedTreeMap;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
+import com.vaiotech.bean.Item;
+import com.vaiotech.bean.ItemAdapter;
 import com.vaiotech.bean.Student;
 import com.vaiotech.myschool.R;
 import com.vaiotech.services.FacultyInfoService;
 import com.vaiotech.services.RestService;
 import com.vaiotech.services.WeeklyTimeTableService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class StudentFacultyInfoActivity extends Activity {
+public class StudentFacultyInfoActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
     private FacultyInfoService facultyInfoService;
     private Context context;
     public static final String PREFS_NAME = "MyPrefsFile";
+    public ListView listView ;
+    public List<Item> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +59,8 @@ public class StudentFacultyInfoActivity extends Activity {
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
         facultyInfoService = new FacultyInfoService(studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection());
         context = this;
+        listView = (ListView)findViewById(R.id.listView);
+        listView.setOnItemClickListener(this);
     }
 
     @Override
@@ -58,6 +68,11 @@ public class StudentFacultyInfoActivity extends Activity {
         super.onStart();
         spiceManager.start(this);
         spiceManager.execute(facultyInfoService , new RestServiceListener());
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
     }
 
 
@@ -69,71 +84,18 @@ public class StudentFacultyInfoActivity extends Activity {
         }
 
         @Override
-        public void onRequestSuccess(List list) {
-            System.out.println("List..." + list);
-            int count = 1;
-            for(Object currVal : list) {
-                Map map = (Map)currVal;
-                TextView tr = null;
-                TextView trd = null;
-                switch (count) {
-                    case 1 :
-                          tr = (TextView) findViewById(R.id.textViewNameOne);
-                          trd = (TextView) findViewById(R.id.textViewEmailOne);
-                        break;
-                    case 2 :
-                        tr = (TextView) findViewById(R.id.textViewNameTwo);
-                        trd = (TextView) findViewById(R.id.textViewEmailTwo);
-                        break;
-                    case 3 :
-                        tr = (TextView) findViewById(R.id.textViewNameThree);
-                        trd = (TextView) findViewById(R.id.textViewEmailThree);
-                        break;
-                    case 4 :
-                        tr = (TextView) findViewById(R.id.textViewNameFour);
-                        trd = (TextView) findViewById(R.id.textViewEmailFour);
-                        break;
-                    case 5 :
-                        tr = (TextView) findViewById(R.id.textViewNameFive);
-                        trd = (TextView) findViewById(R.id.textViewEmailFive);
-                        break;
-                    case 6 :
-                        tr = (TextView) findViewById(R.id.textViewNameSix);
-                        trd = (TextView) findViewById(R.id.textViewEmailSix);
-                        break;
-                    case 7 :
-                        tr = (TextView) findViewById(R.id.textViewNameSeven);
-                        trd = (TextView) findViewById(R.id.textViewEmailSeven);
-                        break;
-                    case 8 :
-                        tr = (TextView) findViewById(R.id.textViewNameEight);
-                        trd = (TextView) findViewById(R.id.textViewEmailEight);
-                        break;
-                    case 9 :
-                        tr = (TextView) findViewById(R.id.textViewNameNine);
-                        trd = (TextView) findViewById(R.id.textViewEmailNine);
-                        break;
-                    case 10 :
-                        tr = (TextView) findViewById(R.id.textViewNameTen);
-                        trd = (TextView) findViewById(R.id.textViewEmailTen);
-                        break;
-//                    case 11 :
-//                        tr = (TextView) findViewById(R.id.textViewNameOne);
-//                        trd = (TextView) findViewById(R.id.textViewEmailOne);
-//                        break;
-//                    case 12 :
-//                        tr = (TextView) findViewById(R.id.textViewNameOne);
-//                        trd = (TextView) findViewById(R.id.textViewEmailOne);
-//                        break;
-                    default:
-                        break;
-                }
-                if(tr != null && trd != null) {
-                    tr.setText(map.get("teacherName").toString() + " ( " +map.get("teacherRole").toString() + " ) ");
-                    trd.setText("Email : " + map.get("teacherEmail").toString());
-                }
-                count++;
+        public void onRequestSuccess(List result) {
+            System.out.println("List..." + result);
+            list = new ArrayList<Item>();
+            for(Object currVal :result) {
+                Map map = (Map) currVal;
+                Item item = new Item(map.get("teacherName").toString() + " ( " +map.get("teacherRole").toString() + " ) "
+                        , "Email : " + map.get("teacherEmail").toString());
+                list.add(item);
             }
+            ItemAdapter adapter = new ItemAdapter(context , R.layout.list_item , list);
+            listView.setAdapter(adapter);
+
         }
     }
 
