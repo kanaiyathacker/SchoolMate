@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
+import com.vaiotech.bean.DateItemAdapter;
 import com.vaiotech.bean.Item;
 import com.vaiotech.bean.ItemAdapter;
 import com.vaiotech.bean.Student;
@@ -83,7 +84,7 @@ public class InternalResultsActivity extends Activity {
                 , ""+map.get("date") );
                 list.add(item);
             }
-            ItemAdapter adapter = new ItemAdapter(context , R.layout.list_item , list);
+            DateItemAdapter adapter = new DateItemAdapter(context , R.layout.date_list_item , list);
             listView.setAdapter(adapter);
         }
     }

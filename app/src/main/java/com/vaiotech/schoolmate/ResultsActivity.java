@@ -8,27 +8,36 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
+import com.vaiotech.bean.Item;
+import com.vaiotech.bean.ItemAdapter;
 import com.vaiotech.bean.Student;
 import com.vaiotech.myschool.R;
+import com.vaiotech.services.ExamTermService;
 import com.vaiotech.services.FacultyInfoService;
 import com.vaiotech.services.RestService;
 import com.vaiotech.services.ResultsService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ResultsActivity extends Activity {
+public class ResultsActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private SpiceManager spiceManager = new SpiceManager(RestService.class);
     private ResultsService resultsService;
+    private ExamTermService examTermService;
+    public ListView listView ;
     private Context context;
+    List<Item> list;
     public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
@@ -51,8 +60,18 @@ public class ResultsActivity extends Activity {
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
 
         resultsService = new ResultsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection());
+        listView = (ListView)findViewById(R.id.listView);
+        listView.setOnItemClickListener(this);
         context = this;
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intend = new Intent(this , SubjectResultActivity.class);
+        intend.putExtra("SUB" , list.get(i).getTitle());
+//        intend.putExtra("TYPE" , type);
+        startActivity(intend);
     }
 
     @Override
@@ -78,21 +97,30 @@ public class ResultsActivity extends Activity {
         @Override
         public void onRequestSuccess(List result) {
             System.out.println(result);
-            for(Object currVal :result) {
-                Map map = (Map) currVal;
-                System.out.println("map..." + map);
-                String type = (String) map.get("type");
-                if(type.equals("AT1")) {
-                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm1Value);
-                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
-                } else if(type.equals("AT2")) {
-                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm2Value);
-                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
-                }else if(type.equals("AT3")) {
-                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm3Value);
-                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
+//            for(Object currVal :result) {
+//                Map map = (Map) currVal;
+//                System.out.println("map..." + map);
+//                String type = (String) map.get("typeDesc");
+//                if(type.equals("AT1")) {
+//                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm1Value);
+//                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
+//                } else if(type.equals("AT2")) {
+//                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm2Value);
+//                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
+//                }else if(type.equals("AT3")) {
+//                    TextView  textViewSection = (TextView)findViewById(R.id.textViewTerm3Value);
+//                    textViewSection.setText("Aggregate : " + map.get("scored") + "/" + map.get("total"));
+//                }
+
+                list = new ArrayList<Item>();
+                for(Object currVal :result) {
+                    Map map = (Map) currVal;
+                    Item item = new Item(""+map.get("typeDesc") , "Aggregate : " + map.get("scored") + "/" + map.get("total"));
+                    list.add(item);
                 }
-            }
+                ItemAdapter adapter = new ItemAdapter(context , R.layout.list_item , list);
+                listView.setAdapter(adapter);
+//            }
         }
     }
 
@@ -119,19 +147,19 @@ public class ResultsActivity extends Activity {
         RelativeLayout lo = (RelativeLayout)view;
         Intent intent = null;
 
-        if(lo.getId() == R.id.relativeTerm1) {
-            intent = new Intent(this ,ResultDetailsActivity.class);
-            intent.putExtra("TYPE" , "T1");
-        } else if(lo.getId() == R.id.relativeTerm2) {
-            intent = new Intent(this ,ResultDetailsActivity.class);
-            intent.putExtra("TYPE" , "T2");
-        } else if(lo.getId() == R.id.relativeTerm3) {
-            intent = new Intent(this ,ResultDetailsActivity.class);
-            intent.putExtra("TYPE" , "T3");
-        } else if(lo.getId() == R.id.relativeClassTest) {
-            intent = new Intent(this ,InternalResultsActivity.class);
-            intent.putExtra("TYPE" , "CT");
-        }
+//        if(lo.getId() == R.id.relativeTerm1) {
+//            intent = new Intent(this ,ResultDetailsActivity.class);
+//            intent.putExtra("TYPE" , "T1");
+//        } else if(lo.getId() == R.id.relativeTerm2) {
+//            intent = new Intent(this ,ResultDetailsActivity.class);
+//            intent.putExtra("TYPE" , "T2");
+//        } else if(lo.getId() == R.id.relativeTerm3) {
+//            intent = new Intent(this ,ResultDetailsActivity.class);
+//            intent.putExtra("TYPE" , "T3");
+//        } else if(lo.getId() == R.id.relativeClassTest) {
+//            intent = new Intent(this ,InternalResultsActivity.class);
+//            intent.putExtra("TYPE" , "CT");
+//        }
         startActivity(intent);
     }
 }
