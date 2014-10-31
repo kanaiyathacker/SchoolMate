@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,7 +57,15 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
 
         type = getIntent().getStringExtra("TYPE");
-
+        if("AT1".equalsIgnoreCase(type)) {
+            type = "T1";
+        } else if("AT2".equalsIgnoreCase(type)) {
+            type = "T2";
+        } else if("AT3".equalsIgnoreCase(type)) {
+            type = "T3";
+        } else if("AT4".equalsIgnoreCase(type)) {
+            type = "T4";
+        }
         resultDetailsService = new ResultDetailsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() , type);
         context = this;
 
@@ -70,6 +79,9 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
 
         listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
+        int[] colors = {0, 0xFFFF0000, 0}; // red for the example
+        listView.setDivider(new GradientDrawable(GradientDrawable.Orientation.RIGHT_LEFT, colors));
+        listView.setDividerHeight(2);
     }
 
     @Override

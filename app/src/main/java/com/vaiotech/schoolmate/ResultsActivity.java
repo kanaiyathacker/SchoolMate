@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -75,7 +76,7 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
             intent.putExtra("TYPE" , "CT");
         } else {
             intent = new Intent(this ,ResultDetailsActivity.class);
-            intent.putExtra("TYPE" , term.get(i).substring(1, term.get(i).length()  ));
+            intent.putExtra("TYPE" , term.get(i));
         }
         startActivity(intent);
     }
@@ -124,10 +125,13 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
                     Map map = (Map) currVal;
                     Item item = new Item(""+map.get("typeDesc") , "Aggregate : " + map.get("scored") + "/" + map.get("total"));
                     list.add(item);
-                    term.add(""+map.get("AT2"));
+                    term.add(""+map.get("type"));
                 }
                 ItemAdapter adapter = new ItemAdapter(context , R.layout.list_item , list);
                 listView.setAdapter(adapter);
+                int[] colors = {0, 0xFFFF0000, 0}; // red for the example
+                listView.setDivider(new GradientDrawable(GradientDrawable.Orientation.RIGHT_LEFT, colors));
+                listView.setDividerHeight(2);
 //            }
         }
     }

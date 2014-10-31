@@ -113,6 +113,10 @@
             android:name="com.vaiotech.schoolmate.InternalResultsActivity"
             android:label="@string/title_activity_internal_results" >
         </activity>
+        <activity
+            android:name="com.vaiotech.MyTabActivity"
+            android:label="@string/title_activity_my_tab" >
+        </activity>
     </application>
 
 </manifest>

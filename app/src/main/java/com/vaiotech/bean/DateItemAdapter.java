@@ -2,6 +2,7 @@ package com.vaiotech.bean;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,7 @@ public class DateItemAdapter extends ArrayAdapter<Item> {
         holder.txtDesc.setText(rowItem.getDescription());
         holder.txtTitle.setText(rowItem.getTitle());
         holder.txtDate.setText(rowItem.getDate());
+        convertView.setBackgroundColor(position % 2 == 0 ?Color.parseColor("#F0F0F0") : Color.parseColor("#D2E4FC"));
         return convertView;
     }
 }

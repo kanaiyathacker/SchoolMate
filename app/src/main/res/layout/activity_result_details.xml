@@ -85,8 +85,16 @@
             android:padding="5dp"
             />
     </RelativeLayout>
-    <ListView
+    <View
+        android:layout_width="fill_parent"
         android:layout_below="@+id/relativeTermHeader"
+        android:layout_height="2dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/firstHLine"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/darker_gray"/>
+    <ListView
+        android:layout_below="@+id/firstHLine"
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

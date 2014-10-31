@@ -41,5 +41,9 @@
     <string name="title_activity_result_details">ResultDetailsActivity</string>
     <string name="title_activity_subject_result">SubjectResultActivity</string>
     <string name="title_activity_internal_results">InternalResultsActivity</string>
+    <string name="title_activity_my_tab">MyTabActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
 
 </resources>

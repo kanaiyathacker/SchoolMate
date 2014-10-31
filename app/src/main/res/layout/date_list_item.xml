@@ -4,6 +4,7 @@
     android:layout_height="fill_parent" >
 
     <LinearLayout
+
         android:orientation="horizontal"
         android:id="@+id/linearItem"
         android:layout_width="fill_parent"
@@ -11,6 +12,7 @@
 
     <TextView
         android:layout_weight="1"
+        android:padding="5dp"
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -21,6 +23,7 @@
     <TextView
         android:layout_weight="1"
         android:id="@+id/date"
+        android:padding="5dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
@@ -31,6 +34,7 @@
 
     <TextView
         android:id="@+id/desc"
+        android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearItem"

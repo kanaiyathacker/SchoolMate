@@ -2,6 +2,7 @@ package com.vaiotech.bean;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.internal.view.menu.MenuView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +50,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         holder.txtDesc.setText(rowItem.getDescription());
         holder.txtTitle.setText(rowItem.getTitle());
+        convertView.setBackgroundColor(position % 2 == 0 ?Color.parseColor("#F0F0F0") : Color.parseColor("#D2E4FC"));
         return convertView;
     }
 }
