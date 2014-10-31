@@ -38,6 +38,7 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
     public ListView listView ;
     private Context context;
     List<Item> list;
+    List<String> term;
     public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
@@ -68,10 +69,15 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Intent intend = new Intent(this , SubjectResultActivity.class);
-        intend.putExtra("SUB" , list.get(i).getTitle());
-//        intend.putExtra("TYPE" , type);
-        startActivity(intend);
+        Intent intent = null;
+        if(term.get(i).equals("CT")) {
+            intent = new Intent(this ,ResultDetailsActivity.class);
+            intent.putExtra("TYPE" , "CT");
+        } else {
+            intent = new Intent(this ,InternalResultsActivity.class);
+            intent.putExtra("TYPE" , term.get(i).substring(1, term.get(i).length()));
+        }
+        startActivity(intent);
     }
 
     @Override
@@ -113,10 +119,12 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
 //                }
 
                 list = new ArrayList<Item>();
+                term = new ArrayList<String>();
                 for(Object currVal :result) {
                     Map map = (Map) currVal;
                     Item item = new Item(""+map.get("typeDesc") , "Aggregate : " + map.get("scored") + "/" + map.get("total"));
                     list.add(item);
+                    term.add(""+map.get("AT2"));
                 }
                 ItemAdapter adapter = new ItemAdapter(context , R.layout.list_item , list);
                 listView.setAdapter(adapter);
