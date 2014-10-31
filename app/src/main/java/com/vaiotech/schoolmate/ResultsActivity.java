@@ -71,11 +71,11 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = null;
         if(term.get(i).equals("CT")) {
-            intent = new Intent(this ,ResultDetailsActivity.class);
+            intent = new Intent(this ,InternalResultsActivity.class);
             intent.putExtra("TYPE" , "CT");
         } else {
-            intent = new Intent(this ,InternalResultsActivity.class);
-            intent.putExtra("TYPE" , term.get(i).substring(1, term.get(i).length()));
+            intent = new Intent(this ,ResultDetailsActivity.class);
+            intent.putExtra("TYPE" , term.get(i).substring(1, term.get(i).length()  ));
         }
         startActivity(intent);
     }
