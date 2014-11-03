@@ -40,4 +40,7 @@ public interface RestServiceInterface {
     @GET("/myschool/examTerm/{schoolID}/{className}/{section}")
     Object getExamTerm(@Path("schoolID") String schoolID , @Path("className") String className , @Path("section") String section);
 
+    @GET("/city/getStudentAttendance/{studentId}/{schoolid}/{section}/{className}")
+    Object getStudentAttendance(@Path("studentId") String studentId , @Path("schoolid") String schoolid , @Path("section") String section , @Path("className") String className);
+
 }

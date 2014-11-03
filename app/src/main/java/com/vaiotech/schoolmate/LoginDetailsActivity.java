@@ -138,10 +138,6 @@ public class LoginDetailsActivity extends Activity {
                 intent = new Intent(this ,AboutUsActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.weeklyTimeTable:
-                intent = new Intent(this ,TimeTableActivity.class);
-                startActivity(intent);
-                break;
             case R.id.dailyTimeTable:
                 intent = new Intent(this ,DailyTimeTableActivity.class);
                 spiceManager.start(this);

@@ -6,7 +6,7 @@
         </style>
 
         <style name="myTheme.ActionBar" parent="@android:Widget.Holo.Light.ActionBar.Solid">
-            <item name="android:background">#C00000</item>
+            <item name="android:background">#BA0913</item>
             <item name="android:titleTextStyle">@style/myTheme.ActionBar.Text</item>
         </style>
 
@@ -24,14 +24,14 @@
 
     <!--sets the point size to the menu item(s) in the upper right of action bar-->
     <style name="MyActionBar.MenuTextStyle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:background">#C00000</item>
+        <item name="android:background">#BA0913</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:textSize">8sp</item>
     </style>
 
     <!-- The beef: background color for Action Bar overflow menu -->
     <style name="MyApp.PopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">
-        <item name="android:popupBackground">#C00000</item>
+        <item name="android:popupBackground">#BA0913</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:titleTextStyle">@style/myTheme.ActionBar.Text</item>
     </style>
@@ -45,7 +45,7 @@
     </style>
 
     <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:background">#ff830101</item>
+        <item name="android:background">#BA0913</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:textSize">18sp</item>
         <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
@@ -54,7 +54,7 @@
     <!-- Bonus: if you want to style whole Action Bar, not just the menu -->
     <style name="MyApp.ActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid">
         <!-- Blue background color & black bottom border -->
-        <item name="android:background">#ff930100</item>
+        <item name="android:background">#BA0913</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:textSize">18dp</item>
         <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
