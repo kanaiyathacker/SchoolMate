@@ -87,7 +87,7 @@
     <View
         android:layout_width="fill_parent"
         android:layout_below="@+id/relativeTermHeader"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_marginTop="5dp"
         android:id="@+id/firstHLine"
         android:layout_marginBottom="5dp"
