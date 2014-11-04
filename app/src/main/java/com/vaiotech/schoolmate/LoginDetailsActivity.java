@@ -41,7 +41,7 @@ public class LoginDetailsActivity extends Activity {
         weeklyTimeTableService = new WeeklyTimeTableService(studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection());
 
         TextView textViewStudentName = (TextView)findViewById(R.id.textViewStudentName);
-        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Calibri.ttf");
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
         textViewStudentName.setTypeface(font);
 
         TextView textViewStudentNameValue = (TextView)findViewById(R.id.textViewStudentNameValue);

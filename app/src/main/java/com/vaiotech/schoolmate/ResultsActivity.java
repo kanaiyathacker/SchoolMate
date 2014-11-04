@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -49,6 +50,9 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
         String studentInfoJson = sharedPreferences.getString("STUDENT_INFO" , null);
         Student studentInfo = new Gson().fromJson(studentInfoJson , Student.class);
+
+        Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
+
         TextView textViewClassName = (TextView)findViewById(R.id.textViewClassName);
         textViewClassName.setText("Class: "+studentInfo.getClassName());
 
@@ -60,6 +64,11 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
 
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
+
+        textViewClassName.setTypeface(font);
+        textViewSection.setTypeface(font);
+        textViewStudentNameValue.setTypeface(font);
+        textViewStudentRollNoValue.setTypeface(font);
 
         resultsService = new ResultsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection());
         listView = (ListView)findViewById(R.id.listView);

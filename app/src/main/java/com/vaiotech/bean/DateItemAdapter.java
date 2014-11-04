@@ -3,6 +3,7 @@ package com.vaiotech.bean;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,13 @@ import java.util.List;
 public class DateItemAdapter extends ArrayAdapter<Item> {
 
     Context context;
+    Typeface font;
 
     public DateItemAdapter(Context context, int resourceId,
                        List<Item> items) {
         super(context, resourceId, items);
         this.context = context;
+        font = Typeface.createFromAsset(context.getAssets(), "fonts/Calibri.ttf");
     }
 
     /*private view holder class*/
@@ -52,6 +55,11 @@ public class DateItemAdapter extends ArrayAdapter<Item> {
         holder.txtDesc.setText(rowItem.getDescription());
         holder.txtTitle.setText(rowItem.getTitle());
         holder.txtDate.setText(rowItem.getDate());
+
+        holder.txtDesc.setTypeface(font);
+        holder.txtTitle.setTypeface(font);
+        holder.txtDate.setTypeface(font);
+
         convertView.setBackgroundColor(position % 2 == 0 ?Color.parseColor("#ffffff") : Color.parseColor("#d7d7d7"));
         return convertView;
     }

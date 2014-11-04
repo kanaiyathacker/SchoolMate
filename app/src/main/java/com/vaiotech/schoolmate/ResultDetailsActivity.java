@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -46,17 +47,22 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
         Student studentInfo = new Gson().fromJson(studentInfoJson , Student.class);
         TextView textViewClassName = (TextView)findViewById(R.id.textViewClassName);
         textViewClassName.setText("Class: "+studentInfo.getClassName());
+        Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
 
         TextView  textViewSection = (TextView)findViewById(R.id.textViewSection);
         textViewSection.setText("Sec: "+studentInfo.getSection());
+        textViewSection.setTypeface(font);
 
         TextView  textViewStudentNameValue = (TextView)findViewById(R.id.textViewStudentNameValue);
         textViewStudentNameValue.setText(studentInfo.getfName());
+        textViewStudentNameValue.setTypeface(font);
 
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
+        textViewStudentRollNoValue.setTypeface(font);
 
         type = getIntent().getStringExtra("TYPE");
+
         if("AT1".equalsIgnoreCase(type)) {
             type = "T1";
         } else if("AT2".equalsIgnoreCase(type)) {
@@ -66,17 +72,18 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
         } else if("AT4".equalsIgnoreCase(type)) {
             type = "T4";
         }
+
         resultDetailsService = new ResultDetailsService(studentInfo.getId() , studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection() , type);
         context = this;
 
 
-        System.out.println("Type... "  + type);
         TextView  textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
         if("T1".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 1");
         if("T2".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 2");
         if("T3".equalsIgnoreCase(type)) textViewTermHeader.setText("Semester 3");
         if("CT".equalsIgnoreCase(type)) textViewTermHeader.setText("Class");
 
+        textViewTermHeader.setTypeface(font);
         listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
         int[] colors = {0xFFFF0000, 0xFFFF0000, 0xFFFF0000}; // red for the example

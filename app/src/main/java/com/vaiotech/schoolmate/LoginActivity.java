@@ -34,6 +34,7 @@ public class LoginActivity extends Activity {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Calibri.ttf");
         schoolName.setTypeface(font);
 
+
         TextView textViewTKMATS = (TextView)findViewById(R.id.textViewTKMATS);
         textViewTKMATS.setTypeface(font);
 
