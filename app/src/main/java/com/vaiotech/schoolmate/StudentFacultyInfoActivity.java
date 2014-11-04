@@ -62,9 +62,9 @@ public class StudentFacultyInfoActivity extends Activity implements AdapterView.
         context = this;
         listView = (ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
-        int[] colors = {0, 0xFFFF0000, 0}; // red for the example
+        int[] colors = {0xFFFF0000, 0xFFFF0000, 0xFFFF0000}; // red for the example
         listView.setDivider(new GradientDrawable(GradientDrawable.Orientation.RIGHT_LEFT, colors));
-        listView.setDividerHeight(2);
+        listView.setDividerHeight(1);
     }
 
     @Override

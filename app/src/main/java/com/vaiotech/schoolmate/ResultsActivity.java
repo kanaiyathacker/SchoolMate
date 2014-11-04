@@ -129,9 +129,9 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
                 }
                 ItemAdapter adapter = new ItemAdapter(context , R.layout.list_item , list);
                 listView.setAdapter(adapter);
-                int[] colors = {0, 0xFFFF0000, 0}; // red for the example
+                int[] colors = {0xFFFF0000, 0xFFFF0000, 0xFFFF0000}; // red for the example
                 listView.setDivider(new GradientDrawable(GradientDrawable.Orientation.RIGHT_LEFT, colors));
-                listView.setDividerHeight(2);
+                listView.setDividerHeight(1);
 //            }
         }
     }

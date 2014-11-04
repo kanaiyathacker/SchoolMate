@@ -52,7 +52,7 @@ public class DateItemAdapter extends ArrayAdapter<Item> {
         holder.txtDesc.setText(rowItem.getDescription());
         holder.txtTitle.setText(rowItem.getTitle());
         holder.txtDate.setText(rowItem.getDate());
-        convertView.setBackgroundColor(position % 2 == 0 ?Color.parseColor("#F0F0F0") : Color.parseColor("#D2E4FC"));
+        convertView.setBackgroundColor(position % 2 == 0 ?Color.parseColor("#ffffff") : Color.parseColor("#d7d7d7"));
         return convertView;
     }
 }
