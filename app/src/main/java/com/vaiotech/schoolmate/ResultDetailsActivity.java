@@ -47,7 +47,7 @@ public class ResultDetailsActivity extends Activity implements AdapterView.OnIte
         Student studentInfo = new Gson().fromJson(studentInfoJson , Student.class);
         TextView textViewClassName = (TextView)findViewById(R.id.textViewClassName);
         textViewClassName.setText("Class: "+studentInfo.getClassName());
-        Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
 
         TextView  textViewSection = (TextView)findViewById(R.id.textViewSection);
         textViewSection.setText("Sec: "+studentInfo.getSection());

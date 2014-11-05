@@ -51,7 +51,7 @@ public class ResultsActivity extends Activity implements AdapterView.OnItemClick
         String studentInfoJson = sharedPreferences.getString("STUDENT_INFO" , null);
         Student studentInfo = new Gson().fromJson(studentInfoJson , Student.class);
 
-        Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
 
         TextView textViewClassName = (TextView)findViewById(R.id.textViewClassName);
         textViewClassName.setText("Class: "+studentInfo.getClassName());
