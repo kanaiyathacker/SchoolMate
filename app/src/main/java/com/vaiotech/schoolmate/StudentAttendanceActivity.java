@@ -2,6 +2,7 @@ package com.vaiotech.schoolmate;
 
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -19,6 +20,7 @@ import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 import com.roomorama.caldroid.CaldroidFragment;
+import com.roomorama.caldroid.WeekdayArrayAdapter;
 import com.vaiotech.bean.Student;
 import com.vaiotech.myschool.R;
 import com.vaiotech.services.AttendanceService;
@@ -33,6 +35,21 @@ import java.util.Map;
 
 
 public class StudentAttendanceActivity extends FragmentActivity {
+
+    public final static String DIALOG_TITLE = "dialogTitle";
+    public final static String MONTH = "month";
+    public final static String YEAR = "year";
+    public final static String SHOW_NAVIGATION_ARROWS = "showNavigationArrows";
+    public final static String DISABLE_DATES = "disableDates";
+    public final static String SELECTED_DATES = "selectedDates";
+    public final static String MIN_DATE = "minDate";
+    public final static String MAX_DATE = "maxDate";
+    public final static String ENABLE_SWIPE = "enableSwipe";
+    public final static String START_DAY_OF_WEEK = "startDayOfWeek";
+    public final static String SIX_WEEKS_IN_CALENDAR = "sixWeeksInCalendar";
+    public final static String ENABLE_CLICK_ON_DISABLED_DATES = "enableClickOnDisabledDates";
+    public final static String SQUARE_TEXT_VIEW_CELL = "squareTextViewCell";
+
 
     private WeekView mWeekView;
     private static final int TYPE_DAY_VIEW = 1;
@@ -60,9 +77,10 @@ public class StudentAttendanceActivity extends FragmentActivity {
         caldroidFragment = new CaldroidFragment();
         Bundle args = new Bundle();
         Calendar cal = Calendar.getInstance();
+        args.putBoolean(CaldroidFragment.SQUARE_TEXT_VIEW_CELL, false);
         args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
         args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
-        caldroidFragment.setArguments(args);
+//        caldroidFragment.setArguments(args);
         final FrameLayout fl = (FrameLayout)findViewById(R.id.fraContainer);
         final LinearLayout ll = (LinearLayout)findViewById(R.id.linearMV);
         FragmentTransaction t = getSupportFragmentManager().beginTransaction();
@@ -280,5 +298,65 @@ public class StudentAttendanceActivity extends FragmentActivity {
         return true;
     }
 
+    public void onClickYearlyView(View view) {
+        int viewId = view.getId();
+        Calendar cal = Calendar.getInstance();
+        switch (viewId) {
+            case R.id.linear_0:
+                cal.set(Calendar.MONTH , 0);
+                break;
+
+            case R.id.linear_1:
+                cal.set(Calendar.MONTH , 1);
+                break;
+
+            case R.id.linear_2:
+                cal.set(Calendar.MONTH , 2);
+                break;
+
+            case R.id.linear_3:
+                cal.set(Calendar.MONTH , 3);
+                break;
+
+            case R.id.linear_4:
+                cal.set(Calendar.MONTH , 4);
+                break;
+
+            case R.id.linear_5:
+                cal.set(Calendar.MONTH , 5);
+                break;
+
+            case R.id.linear_6:
+                cal.set(Calendar.MONTH , 6);
+                break;
+
+            case R.id.linear_7:
+                cal.set(Calendar.MONTH , 7);
+                break;
+
+            case R.id.linear_8:
+                cal.set(Calendar.MONTH , 8);
+                break;
+
+            case R.id.linear_9:
+                cal.set(Calendar.MONTH , 9);
+                break;
+
+            case R.id.linear_10:
+                cal.set(Calendar.MONTH , 10);
+                break;
+
+            case R.id.linear_11:
+                cal.set(Calendar.MONTH , 11);
+                break;
+
+        }
+        caldroidFragment.moveToDate(cal.getTime());
+        caldroidFragment.refreshView();
+        FrameLayout fl = (FrameLayout)findViewById(R.id.fraContainer);
+        LinearLayout ll = (LinearLayout)findViewById(R.id.linearMV);
+        fl.setVisibility(View.VISIBLE);
+        ll.setVisibility(View.INVISIBLE);
+    }
 
 }

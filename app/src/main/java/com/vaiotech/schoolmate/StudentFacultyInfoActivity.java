@@ -3,6 +3,7 @@ package com.vaiotech.schoolmate;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -47,17 +48,25 @@ public class StudentFacultyInfoActivity extends Activity implements AdapterView.
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
         String studentInfoJson = sharedPreferences.getString("STUDENT_INFO" , null);
         Student studentInfo = new Gson().fromJson(studentInfoJson , Student.class);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
+
         TextView  textViewClassName = (TextView)findViewById(R.id.textViewClassName);
         textViewClassName.setText("Class: "+studentInfo.getClassName());
+        textViewClassName.setTypeface(font);
 
         TextView  textViewSection = (TextView)findViewById(R.id.textViewSection);
         textViewSection.setText("Sec: "+studentInfo.getSection());
+        textViewSection.setTypeface(font);
 
         TextView  textViewStudentNameValue = (TextView)findViewById(R.id.textViewStudentNameValue);
         textViewStudentNameValue.setText(studentInfo.getfName());
+        textViewStudentNameValue.setTypeface(font);
 
         TextView  textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setText("Roll No: "+studentInfo.getRollNo());
+        textViewStudentRollNoValue.setTypeface(font);
+
+
         facultyInfoService = new FacultyInfoService(studentInfo.getSchoolId() , studentInfo.getClassName() , studentInfo.getSection());
         context = this;
         listView = (ListView)findViewById(R.id.listView);

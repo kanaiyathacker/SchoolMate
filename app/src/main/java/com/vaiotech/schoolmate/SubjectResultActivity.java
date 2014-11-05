@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -60,19 +61,23 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
         String studentInfoJson = sharedPreferences.getString("STUDENT_INFO" , null);
         Student studentInfo = new Gson().fromJson(studentInfoJson , Student.class);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Arial_Rounded_MT_Bold.ttf");
+
         TextView textViewClassName = (TextView)findViewById(R.id.textViewClassName);
         textViewClassName.setText("Class: "+studentInfo.getClassName());
+        textViewClassName.setTypeface(font);
 
         TextView  textViewSection = (TextView)findViewById(R.id.textViewSection);
         textViewSection.setText("Sec: "+studentInfo.getSection());
+        textViewSection.setTypeface(font);
 
         TextView  textViewStudentNameValue = (TextView)findViewById(R.id.textViewStudentNameValue);
         textViewStudentNameValue.setText(studentInfo.getfName());
+        textViewStudentNameValue.setTypeface(font);
 
         TextView  textViewTermHeader = (TextView)findViewById(R.id.textViewTermHeader);
         textViewTermHeader.setText(studentInfo.getfName());
-
-
+        textViewTermHeader.setTypeface(font);
 
          textViewYSVal = (TextView)findViewById(R.id.textViewYSVal);
          textViewHSVal = (TextView)findViewById(R.id.textViewHSVal);

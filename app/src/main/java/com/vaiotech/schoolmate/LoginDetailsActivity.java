@@ -47,14 +47,14 @@ public class LoginDetailsActivity extends Activity {
         TextView textViewStudentNameValue = (TextView)findViewById(R.id.textViewStudentNameValue);
         textViewStudentNameValue.setTypeface(font);
         textViewStudentNameValue.setText(studentInfo.getfName() + " " + studentInfo.getmName() + " " + studentInfo.getlName());
-        TextView textViewStudentRollNo = (TextView)findViewById(R.id.textViewStudentRollNo);
+        TextView textViewStudentRollNo = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNo.setTypeface(font);
 
         TextView textViewStudentRollNoValue = (TextView)findViewById(R.id.textViewStudentRollNoValue);
         textViewStudentRollNoValue.setTypeface(font);
         textViewStudentRollNoValue.setText(studentInfo.getRollNo());
 
-        TextView textViewStudentClass = (TextView)findViewById(R.id.textViewStudentClass);
+        TextView textViewStudentClass = (TextView)findViewById(R.id.textViewStudentClassValue);
         textViewStudentClass.setTypeface(font);
 
         TextView textViewStudentClassValue = (TextView)findViewById(R.id.textViewStudentClassValue);

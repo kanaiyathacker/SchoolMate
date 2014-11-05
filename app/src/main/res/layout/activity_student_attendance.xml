@@ -35,6 +35,8 @@
             android:layout_height="fill_parent">
 
             <LinearLayout
+                android:onClick="onClickYearlyView"
+                android:id="@+id/linear_0"
                 android:layout_margin="1dp"
                 android:background="@drawable/border"
                 android:orientation="vertical"
@@ -60,6 +62,8 @@
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/linear_1"
+                android:onClick="onClickYearlyView"
                 android:layout_margin="1dp"
                 android:background="@drawable/border"
                 android:orientation="vertical"
@@ -82,6 +86,8 @@
                     />
                 </LinearLayout>
             <LinearLayout
+                android:id="@+id/linear_2"
+                android:onClick="onClickYearlyView"
                 android:layout_margin="1dp"
                 android:background="@drawable/border"
                 android:orientation="vertical"
@@ -117,6 +123,8 @@
                 android:layout_height="fill_parent">
 
                 <LinearLayout
+                    android:id="@+id/linear_3"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -139,6 +147,8 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/linear_4"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -161,6 +171,8 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/linear_5"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -197,6 +209,8 @@
                 android:layout_height="fill_parent">
 
                 <LinearLayout
+                    android:id="@+id/linear_6"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -219,6 +233,8 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/linear_7"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -241,6 +257,8 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/linear_8"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -276,6 +294,8 @@
                 android:layout_height="fill_parent">
 
                 <LinearLayout
+                    android:id="@+id/linear_9"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -298,6 +318,8 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/linear_10"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
@@ -320,6 +342,8 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/linear_11"
+                    android:onClick="onClickYearlyView"
                     android:layout_margin="1dp"
                     android:background="@drawable/border"
                     android:orientation="vertical"
