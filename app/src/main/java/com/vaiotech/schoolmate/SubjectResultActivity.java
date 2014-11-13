@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.Typeface;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -23,6 +25,12 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.interfaces.OnChartValueSelectedListener;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
+import com.jjoe64.graphview.BarGraphView;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphViewDataInterface;
+import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.LineGraphView;
+import com.jjoe64.graphview.ValueDependentColor;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.vaiotech.Utility.BarGraph;
@@ -168,6 +176,34 @@ public class SubjectResultActivity extends Activity  implements View.OnClickList
 //        l.setPosition(Legend.LegendPosition.BELOW_CHART_LEFT);
 //        l.setFormSize(8f);
 //        l.setXEntrySpace(4f);
+
+        GraphViewSeries.GraphViewSeriesStyle seriesStyle = new GraphViewSeries.GraphViewSeriesStyle();
+        seriesStyle.setValueDependentColor(new ValueDependentColor() {
+            @Override
+            public int get(GraphViewDataInterface data) {
+                // the higher the more red
+                return Color.rgb((int) (150 + ((data.getY() / 3) * 100)), (int) (150 - ((data.getY() / 3) * 150)), (int) (150 - ((data.getY() / 3) * 150)));
+            }
+        });
+
+        GraphViewSeries exampleSeries = new GraphViewSeries("aaa", seriesStyle, new GraphView.GraphViewData[] {
+                new GraphView.GraphViewData(1, 1)
+                , new GraphView.GraphViewData(2, 2)
+                , new GraphView.GraphViewData(3, 3) // another frequency
+                , new GraphView.GraphViewData(4, 4)
+        });
+
+        GraphView graphView = new BarGraphView(
+                this // context
+                , "Graph" // heading
+        );
+
+        graphView.addSeries(exampleSeries); // data
+        graphView.setHorizontalLabels(new String[] {"Your", "Highest", "Avg", "Lowest"});
+        graphView.setVerticalLabels(new String[] {"100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0"});
+        LinearLayout layout = (LinearLayout) findViewById(R.id.graphLayout);
+        layout.addView(graphView);
+
     }
 
 
